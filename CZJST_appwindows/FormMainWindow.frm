@@ -1662,11 +1662,11 @@ Public answer
             FormTimeUp.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
             FormTimeUp.windowanimationtargetwidth = 12510
             FormTimeUp.windowanimationtargetheight = 2745
-            'SHUTDOWN WHEN TIMER ENDS
+            'shut down when time is up
             If shutdownwhentimeupswitch = True Then
                 shutdowncountdowntype = "Shutdown"
                 shutdowncountdowntimeout = 16
-                FormShutdownCountdown.LabelHinttextA.Caption = "Your computer is set to shutdown when timer ends."
+                FormShutdownCountdown.LabelHinttextA.Caption = "Your computer is set to shut down when time is up."
                 FormShutdownCountdown.LabelHinttextB.Caption = "Please save your files in time."
                 FormShutdownCountdown.CmdOK.Caption = "SHUT DOWN NOW"
                 FormShutdownCountdown.TimerShutdownCountdown.Enabled = True
@@ -2010,7 +2010,7 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
     Public Sub MenuExtrasShutDownComputer_Click()
         shutdowncountdowntype = "Shutdown"
         shutdowncountdowntimeout = 16
-        FormShutdownCountdown.LabelHinttextA.Caption = "Your computer is about to shutdown."
+        FormShutdownCountdown.LabelHinttextA.Caption = "Your computer is about to shut down."
         FormShutdownCountdown.LabelHinttextB.Caption = "Please save your files in time."
         FormShutdownCountdown.CmdOK.Caption = "SHUT DOWN NOW"
         FormShutdownCountdown.TimerShutdownCountdown.Enabled = True
