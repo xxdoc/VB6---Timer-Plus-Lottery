@@ -2,7 +2,7 @@
 
 ## Downloads / 下载 / ダウンロード
 
-[Timer+Lottery v8.02.exe](https://raw.githubusercontent.com/SamToki/VB6---Timer-Plus-Lottery/master/%5B2%5D%20EXE/Timer%2BLottery%20v8.02.zip)
+[Timer+Lottery v8.02.zip](https://raw.githubusercontent.com/SamToki/VB6---Timer-Plus-Lottery/master/%5B2%5D%20EXE/Timer%2BLottery%20v8.02.zip)
 
 ## Screenshots / 屏幕截图 / スクリーンショット
 
