@@ -2,12 +2,14 @@
 
 ## Downloads / 下载 / ダウンロード
 
-[Timer+Lottery v8.02.exe](https://raw.githubusercontent.com/SamToki/VB6---KanaMaster/master/%5B2%5D%20EXE/KanaMaster%20v0.10.exe)
+[Timer+Lottery v8.02.exe](https://raw.githubusercontent.com/SamToki/VB6---Timer-Plus-Lottery/master/%5B2%5D%20EXE/Timer%2BLottery%20v8.02.zip)
 
 ## Screenshots / 屏幕截图 / スクリーンショット
 
-![](https://github.com/SamToki/VB6---KanaMaster/blob/master/%5B3%5D%20Screenshots/Screenshot%201%20-%20Before%20Answering.png)<br>
-<br>
+![](https://github.com/SamToki/VB6---Timer-Plus-Lottery/blob/master/%5B3%5D%20Screenshots/Screenshot%201%20-%20Main%20Window.png)<br>
+![](https://github.com/SamToki/VB6---Timer-Plus-Lottery/blob/master/%5B3%5D%20Screenshots/Screenshot%202%20-%20Mini%20Mode%20(Floating%20Window).png)<br>
+![](https://github.com/SamToki/VB6---Timer-Plus-Lottery/blob/master/%5B3%5D%20Screenshots/Screenshot%204%20-%20Settings.png)
+
 -----
 
 ## [en-US] --- English (United States)
