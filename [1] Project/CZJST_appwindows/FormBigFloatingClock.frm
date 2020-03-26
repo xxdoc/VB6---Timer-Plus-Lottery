@@ -10,8 +10,8 @@ Begin VB.Form FormBigFloatingClock
    ClientWidth     =   2430
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌו"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -186,7 +186,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Option Explicit
 
@@ -218,9 +220,7 @@ Public bigfloatingclockautohidetimeout As Integer
     'WARNING: If this code is enabled, FormBigFloatingClock will be uncontrollable.
     'Private Const WS_EX_TRANSPARENT As Long = &H20&
 
-'================================================================================
-
-'================================================================================
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] LOAD []
 
@@ -245,6 +245,8 @@ Public bigfloatingclockautohidetimeout As Integer
         bigfloatingclockoclockblinkongoing = False
         bigfloatingclockoclockblinkrepeatedtimes = 0
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] TIMERS []
 

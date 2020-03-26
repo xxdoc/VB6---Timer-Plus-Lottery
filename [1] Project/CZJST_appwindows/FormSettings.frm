@@ -9,6 +9,15 @@ Begin VB.Form FormSettings
    ClientTop       =   0
    ClientWidth     =   12930
    FillColor       =   &H000000FF&
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    ForeColor       =   &H000000FF&
    Icon            =   "FormSettings.frx":0000
    LinkTopic       =   "FormSettings"
@@ -48,19 +57,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Lottery tone"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":0E04
          MousePointer    =   99  'Custom
          TabIndex        =   27
          Top             =   840
@@ -71,19 +70,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Timer tone"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":0F56
          MousePointer    =   99  'Custom
          TabIndex        =   26
          Top             =   420
@@ -114,19 +103,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Use old scroll animation in Lottery Window"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":10A8
          MousePointer    =   99  'Custom
          TabIndex        =   24
          Top             =   840
@@ -136,19 +115,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Window animations"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":11FA
          MousePointer    =   99  'Custom
          TabIndex        =   22
          Top             =   420
@@ -159,19 +128,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Show light bulb indicators"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   3150
-         MouseIcon       =   "FormSettings.frx":134C
          MousePointer    =   99  'Custom
          TabIndex        =   23
          Top             =   420
@@ -202,19 +161,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Always show date"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":149E
          MousePointer    =   99  'Custom
          TabIndex        =   18
          Top             =   2520
@@ -225,19 +174,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "24-Hour Format"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":15F0
          MousePointer    =   99  'Custom
          TabIndex        =   20
          Top             =   3360
@@ -248,19 +187,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Show seconds"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   3150
-         MouseIcon       =   "FormSettings.frx":1742
          MousePointer    =   99  'Custom
          TabIndex        =   17
          Top             =   2100
@@ -271,19 +200,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Blink dots on the clock"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":1894
          MousePointer    =   99  'Custom
          TabIndex        =   16
          Top             =   2100
@@ -293,19 +212,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Blink the window when minute hits zero"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":19E6
          MousePointer    =   99  'Custom
          TabIndex        =   15
          Top             =   1680
@@ -316,19 +225,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Display the timer instead of the date when it is running"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":1B38
          MousePointer    =   99  'Custom
          TabIndex        =   19
          Top             =   2940
@@ -350,19 +249,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Dark Theme in Mini Mode Window"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":1C8A
          MousePointer    =   99  'Custom
          TabIndex        =   13
          Top             =   840
@@ -373,19 +262,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Automatically expand when mouse moves over"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":1DDC
          MousePointer    =   99  'Custom
          TabIndex        =   14
          Top             =   1260
@@ -400,7 +279,7 @@ Begin VB.Form FormSettings
          Caption         =   "80%"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   9.75
+            Size            =   13.5
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -411,7 +290,7 @@ Begin VB.Form FormSettings
          Height          =   375
          Left            =   1680
          TabIndex        =   11
-         Top             =   510
+         Top             =   450
          Width           =   705
       End
       Begin VB.Label LabelMiniModeOpacity 
@@ -419,15 +298,6 @@ Begin VB.Form FormSettings
          BackColor       =   &H000000FF&
          BackStyle       =   0  'Transparent
          Caption         =   "Opacity:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   210
@@ -459,19 +329,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "24-Hour Format"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":1F2E
          MousePointer    =   99  'Custom
          TabIndex        =   8
          Top             =   1680
@@ -482,19 +342,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Blink the clock when minute hits zero"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":2080
          MousePointer    =   99  'Custom
          TabIndex        =   7
          Top             =   1260
@@ -505,19 +355,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Shadow (recommended)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":21D2
          MousePointer    =   99  'Custom
          TabIndex        =   5
          Top             =   420
@@ -528,19 +368,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Automatically hide when mouse moves over"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":2324
          MousePointer    =   99  'Custom
          TabIndex        =   6
          Top             =   840
@@ -590,19 +420,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Dark Theme in Lottery Window"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":2476
          MousePointer    =   99  'Custom
          TabIndex        =   3
          Top             =   840
@@ -612,19 +432,9 @@ Begin VB.Form FormSettings
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Prevent same numbers in history (recommended)"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MouseIcon       =   "FormSettings.frx":25C8
          MousePointer    =   99  'Custom
          TabIndex        =   2
          Top             =   420
@@ -669,18 +479,25 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] COMMANDS []
 
     'Close button...
     Public Sub CmdClose_Click()
-        Me.Hide
+        windowanimationtargettop = (Screen.Height / 2)
+        windowanimationtargetleft = (Screen.Width / 2)
+        windowanimationtargetwidth = 0
+        windowanimationtargetheight = 0
     End Sub
 
     'Lottery settings...
@@ -941,6 +758,8 @@ Public windowanimationtargetheight As Integer
         End Select
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
@@ -964,4 +783,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
+
+        If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide
     End Sub

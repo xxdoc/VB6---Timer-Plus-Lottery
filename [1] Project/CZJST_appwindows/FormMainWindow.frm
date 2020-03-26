@@ -12,8 +12,8 @@ Begin VB.Form FormMainWindow
    ClientWidth     =   15240
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌו"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -49,15 +49,6 @@ Begin VB.Form FormMainWindow
    End
    Begin VB.CommandButton CmdRestartComputer 
       Caption         =   "Restart"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   435
       Left            =   11760
       TabIndex        =   6
@@ -67,15 +58,6 @@ Begin VB.Form FormMainWindow
    End
    Begin VB.CommandButton CmdShutDownComputer 
       Caption         =   "Shut Down"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   435
       Left            =   10185
       TabIndex        =   5
@@ -85,15 +67,6 @@ Begin VB.Form FormMainWindow
    End
    Begin VB.CommandButton CmdLockCurrentUser 
       Caption         =   "Lock"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   435
       Left            =   8610
       TabIndex        =   4
@@ -103,15 +76,6 @@ Begin VB.Form FormMainWindow
    End
    Begin VB.CommandButton CmdRunWindowsCalculator 
       Caption         =   "Calculator"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   435
       Left            =   7035
       TabIndex        =   3
@@ -174,7 +138,7 @@ Begin VB.Form FormMainWindow
    Begin VB.Frame FrameTimer 
       Appearance      =   0  'Flat
       BackColor       =   &H00D0D0D0&
-      Caption         =   "TIMER"
+      Caption         =   "Timer"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -194,15 +158,6 @@ Begin VB.Form FormMainWindow
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          Caption         =   "Shut down computer when time is up"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   330
          Left            =   1050
@@ -539,7 +494,7 @@ Begin VB.Form FormMainWindow
    Begin VB.Frame FrameLottery 
       Appearance      =   0  'Flat
       BackColor       =   &H00D0D0D0&
-      Caption         =   "LOTTERY"
+      Caption         =   "Lottery"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -1325,20 +1280,49 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+'
+'  === INFORMATION ===
+'
+'  SAM TOKI STUDIO
+'  This is a .frm source code file.
+'
+'  Timer+Lottery
+'
+'  Powered by Sam Toki. MADE IN CHINA.
+'  Version: v8.02 Release Version ENG
+'  Date:    2020/03/26 (Thu.)
+'  History: First version v0.10 Beta was built on 2017/03/24.
+'
+'  WARNING: Commercial use of this computer software is strictly prohibited.
+'           Open source license:      GNU GPL v3
+'           Creative Commons license: CC BY-NC 4.0
+'
+'  Copyright: TM & (C) 2015-2020 SAM TOKI STUDIO. All rights reserved.
+'             SAM TOKI STUDIO is a trademark of CZJ Software Technologies (CZJST) Inc. in the P.R.C and other countries.
+'
+'  ---------------------------------------------------------------------------------------------------------------------
+'
+'  === NOTES FOR REFERENCE ===
+'
+'  ...
+'
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Option Explicit
 
-'DIM Menu...
+'Declare Menu...
 Public setlanguage As String
 
-'DIM Controls...
+'Declare Controls...
 Public timerswitch As Boolean
 Public shutdownwhentimeupswitch As Boolean
 Public lotterygroupswitch As Boolean
 Public bigfloatingclockswitch As Boolean
 
-'DIM SettingsFeatures...
+'Declare SettingsFeatures...
 Public lotterypreventrepeatswitch As Boolean
 Public lotterywindowdarkthemeswitch As Boolean
 Public minimodewindowopacity As Integer
@@ -1359,17 +1343,17 @@ Public bigfloatingclock24hrformatswitch As Boolean
 Public shutdowncountdowntype As String
 Public shutdowncountdowntimeout As Integer
 
-'DIM SettingsDisplay...
+'Declare SettingsDisplay...
 Public windowanimationswitch As Boolean
 Public useoldscrollanimationinlotterywindowswitch As Boolean
 Public lightbulbindicatorsswitch As Boolean
 
-'DIM SettingsSounds...
+'Declare SettingsSounds...
 Public soundswitch As Boolean
 Public timertoneswitch As Boolean
 Public lotterytoneswitch As Boolean
 
-'DIM Timer...
+'Declare Timer...
 Public timersettime As Long
 Public timersettimemin As Long
 Public timersettimesec As Long
@@ -1385,7 +1369,7 @@ Public timerendtimemintext As String
 Public timerendtimesectext As String
 Public timerexpiredsec As Long
 
-'DIM Lottery...
+'Declare Lottery...
 Public lotterytotal As Integer
 Public lotterygroup As Integer
 Public lotterynumber As Integer
@@ -1405,7 +1389,7 @@ Public lotteryscrollprogress As Integer
 Public lotterytimeout As Integer
 Public lotterylooper As Integer
 
-'DIM Clock...
+'Declare Clock...
 Public clockhour As Long
 Public clockmin As Long
 Public clocksec As Long
@@ -1413,14 +1397,12 @@ Public clockmonth As Integer
 Public clockday As Integer
 Public clockweekday As String
 
-'DIM Dialogue...
+'Declare Dialog...
 Public inputnumbermode As String
 Public inputnumberdigits As Integer
 Public answer
 
-'================================================================================
-
-'================================================================================
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] LOAD []
 
@@ -1504,6 +1486,8 @@ Public answer
         clockweekday = "??"
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] TIMERS []
 
     Public Sub TimerClock_Timer()
@@ -1543,7 +1527,7 @@ Public answer
         FormMiniMode.LabelClockMin.Caption = Format(Minute(Time), "00")
         FormMiniMode.LabelClockSec.Caption = Format(Second(Time), "00")
         If (minimodetimeroverwritedateswitch = True And timerswitch = True) Then
-            FormMiniMode.LabelClockDate.Caption = FormMiniMode.LabelTimerDisplay
+            FormMiniMode.LabelClockDate.Caption = LabelTimerMin.Caption & " : " & LabelTimerSec.Caption
         Else
             FormMiniMode.LabelClockDate.Caption = clockmonth & "/" & clockday & " (" & clockweekday & ")"
         End If
@@ -1657,7 +1641,7 @@ Public answer
             FormTimeUp.Top = -2745
             FormTimeUp.Left = (Screen.Width / 2) - (12510 / 2)
             FormTimeUp.Width = 12510
-            FormTimeUp.Height = 2745
+            FormTimeUp.Height = 0
             FormTimeUp.windowanimationtargettop = (Screen.Height / 2) - (2745 / 2)
             FormTimeUp.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
             FormTimeUp.windowanimationtargetwidth = 12510
@@ -1674,7 +1658,7 @@ Public answer
                 FormShutdownCountdown.Top = -2745
                 FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
                 FormShutdownCountdown.Width = 12510
-                FormShutdownCountdown.Height = 2745
+                FormShutdownCountdown.Height = 0
                 FormShutdownCountdown.windowanimationtargettop = 0
                 FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
                 FormShutdownCountdown.windowanimationtargetwidth = 12510
@@ -1940,11 +1924,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
     End Sub
 
     Public Sub MenuExtrasMiniMode_Click()
-        FormMiniMode.Show
+        FormMiniMode.Top = 0
+        FormMiniMode.Left = 0
+        FormMiniMode.Width = 0
+        FormMiniMode.Height = 0
         FormMiniMode.windowanimationtargettop = 0
         FormMiniMode.windowanimationtargetleft = 0
         FormMiniMode.windowanimationtargetwidth = 4455
         FormMiniMode.windowanimationtargetheight = 1830
+        FormMiniMode.Show
         minimodeautohidetimeout = 10
 
         bigfloatingclockswitch = True
@@ -2019,7 +2007,7 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormShutdownCountdown.Top = -2745
         FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
         FormShutdownCountdown.Width = 12510
-        FormShutdownCountdown.Height = 2745
+        FormShutdownCountdown.Height = 0
         FormShutdownCountdown.windowanimationtargettop = 0
         FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
         FormShutdownCountdown.windowanimationtargetwidth = 12510
@@ -2040,7 +2028,7 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormShutdownCountdown.Top = -2745
         FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
         FormShutdownCountdown.Width = 12510
-        FormShutdownCountdown.Height = 2745
+        FormShutdownCountdown.Height = 0
         FormShutdownCountdown.windowanimationtargettop = 0
         FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
         FormShutdownCountdown.windowanimationtargetwidth = 12510

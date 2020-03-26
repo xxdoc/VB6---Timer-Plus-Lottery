@@ -10,8 +10,8 @@ Begin VB.Form FormMiniMode
    ClientWidth     =   4455
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌו"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -119,15 +119,6 @@ Begin VB.Form FormMiniMode
    End
    Begin VB.CommandButton CmdLotteryStartLottery 
       Caption         =   "START LOTTERY"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   330
       Left            =   2205
       TabIndex        =   14
@@ -136,15 +127,6 @@ Begin VB.Form FormMiniMode
    End
    Begin VB.CommandButton CmdTimerReset 
       Caption         =   "RESET"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   330
       Left            =   3255
       TabIndex        =   11
@@ -153,15 +135,6 @@ Begin VB.Form FormMiniMode
    End
    Begin VB.CommandButton CmdTimerStartPauseResume 
       Caption         =   "START"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   330
       Left            =   2205
       TabIndex        =   10
@@ -468,7 +441,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Public minimodeclockoclockblinkongoing As Boolean
 Public minimodeclockoclockblinkrepeatedtimes As Integer
@@ -552,6 +527,8 @@ Public windowanimationtargetheight As Integer
             End If
         End Function
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] LOAD []
 
     Public Sub Form_Load()
@@ -588,6 +565,8 @@ Public windowanimationtargetheight As Integer
     Public Sub MiniModeAdjustOpacity()
         MakeTransparent Me.hWnd, 255 * (FormMainWindow.minimodewindowopacity / 100)
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] TIMERS []
 
@@ -647,7 +626,7 @@ Public windowanimationtargetheight As Integer
     Public Sub TimerMiniModeResponseMonitor_Timer()
         minimoderesponsemonitorafter = FormMiniMode.LabelClockSec
         If minimoderesponsemonitorafter = minimoderesponsemonitorbefore Then
-            MsgBox "The main window of Timer+Lottery is not responding. System will automatically fix the problem...", vbExclamation + vbOKOnly + vbDefaultButton1, "CAUTION"
+            MsgBox "CAUTION: The main window of Timer+Lottery is not responding." & vbCrLf & "Fixing the problem automatically.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
 
             FormMiniMode.Show
             FormMiniMode.windowanimationtargettop = 0
@@ -682,13 +661,13 @@ Public windowanimationtargetheight As Integer
                 TimerMiniModeAutoHide.Enabled = True
                 CmdFix.Caption = "="
             Case Else
-                MsgBox "Sorry, an error has occurred and the program has partly stopped working. We would appreciate it if you can send a feedback to us so as to help solve the problem. (Info: Mini mode auto hide set timeout data error)", vbCritical + vbOKOnly + vbDefaultButton1, "ERROR"
+                MsgBox "ERROR: Mini mode auto hide set timeout is out of range." & vbCrLf & "Please send a feedback to us so as to help solve the problem. Thank you very much.", vbCritical + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
         End Select
     End Sub
     Public Sub CmdRestoreWindow_Click()
         FormMainWindow.Show
         FormMainWindow.WindowState = 0
-        FormMiniMode.Hide
+        Me.Hide
     End Sub
     Public Sub CmdEXIT_Click()
         Call FormMainWindow.MenuEXIT_Click
@@ -717,6 +696,8 @@ Public windowanimationtargetheight As Integer
         Call FormMainWindow.MenuExtrasRestartComputer_Click
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] SPECIAL []
 
     Public Sub ExpandAtMouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -730,7 +711,7 @@ Public windowanimationtargetheight As Integer
                 FormMainWindow.minimodeautohidetimeout = 9999
                 TimerMiniModeAutoHide.Enabled = False
             Case Else
-                MsgBox "Sorry, an error has occurred and the program has partly stopped working. We would appreciate it if you can send a feedback to us so as to help solve the problem. (Info: Mini mode auto hide set timeout data error)", vbCritical + vbOKOnly + vbDefaultButton1, "ERROR"
+                MsgBox "ERROR: Mini mode auto hide set timeout is out of range." & vbCrLf & "Please send a feedback to us so as to help solve the problem. Thank you very much.", vbCritical + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
         End Select
         'LOCATE POSITION
         windowanimationtargettop = 0
@@ -747,7 +728,7 @@ Public windowanimationtargetheight As Integer
                 FormMainWindow.minimodeautohidetimeout = 9999
                 TimerMiniModeAutoHide.Enabled = False
             Case Else
-                MsgBox "Sorry, an error has occurred and the program has partly stopped working. We would appreciate it if you can send a feedback to us so as to help solve the problem. (Info: Mini mode auto hide set timeout data error)", vbCritical + vbOKOnly + vbDefaultButton1, "ERROR"
+                MsgBox "ERROR: Mini mode auto hide set timeout is out of range." & vbCrLf & "Please send a feedback to us so as to help solve the problem. Thank you very much.", vbCritical + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
         End Select
         'LOCATE POSITION
         windowanimationtargettop = 0
@@ -787,6 +768,8 @@ Public windowanimationtargetheight As Integer
         Call ExpandAtClick
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
@@ -810,4 +793,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
+
+        If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide
     End Sub

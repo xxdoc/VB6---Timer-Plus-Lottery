@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormInputNumber 
    Appearance      =   0  'Flat
-   BackColor       =   &H00E0E0E0&
+   BackColor       =   &H00D0D0D0&
    BorderStyle     =   0  'None
    Caption         =   "Enter Number"
    ClientHeight    =   5895
@@ -10,8 +10,8 @@ Begin VB.Form FormInputNumber
    ClientWidth     =   6210
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌו"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -368,7 +368,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Option Explicit
 
@@ -383,6 +385,8 @@ Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] TIMERS []
 
@@ -411,7 +415,12 @@ Public windowanimationtargetheight As Integer
         LabelInputNumber2.Caption = ">"
         LabelInputNumber3.Caption = ">"
         LabelInputNumber4.Caption = ">"
-        FormMainWindow.Enabled = True: FormMiniMode.Enabled = True: FormInputNumber.Hide
+        FormMainWindow.Enabled = True: FormMiniMode.Enabled = True
+
+        windowanimationtargettop = (Screen.Height / 2)
+        windowanimationtargetleft = (Screen.Width / 2)
+        windowanimationtargetwidth = 0
+        windowanimationtargetheight = 0
     End Sub
     Public Sub CmdDelete_Click()
         Select Case currentinputnumber
@@ -627,6 +636,8 @@ Public windowanimationtargetheight As Integer
         If currentinputnumber > FormMainWindow.inputnumberdigits Then Call InputNumberFinish: Exit Sub
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] SPECIAL []
 
     Public Sub InputNumberFinish()
@@ -638,7 +649,7 @@ Public windowanimationtargetheight As Integer
                 Call FormMainWindow.TimerTimer_Timer
             Case "TimerSec"
                 If (inputnumber1 * 10 + inputnumber2) > 59 Then
-                    MsgBox "[Second] cannot be larger than 59.", vbExclamation + vbOKOnly + vbDefaultButton1, "Number Invalid"
+                    MsgBox "CAUTION: Number invalid." & vbCrLf & "[Second] cannot be larger than 59.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
                 Else
                     FormMainWindow.timersettimesec = inputnumber1 * 10 + inputnumber2
                     FormMainWindow.timersettime = FormMainWindow.timersettimemin * 60 + FormMainWindow.timersettimesec
@@ -647,7 +658,7 @@ Public windowanimationtargetheight As Integer
                 Call FormMainWindow.TimerTimer_Timer
             Case "LotteryTotal"
                 If (inputnumber1 * 1000 + inputnumber2 * 100 + inputnumber3 * 10 + inputnumber4) < FormMainWindow.lotterygroup Then
-                    MsgBox "[Group] cannot be larger than the lottery number range.", vbExclamation + vbOKOnly + vbDefaultButton1, "Number Invalid"
+                    MsgBox "CAUTION: Number invalid." & vbCrLf & "[Group] cannot be larger than the lottery number range.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
                 Else
                     If (inputnumber1 * 1000 + inputnumber2 * 100 + inputnumber3 * 10 + inputnumber4) < 2 Then
                         MsgBox "The number cannot be smaller than 2.", vbExclamation + vbOKOnly + vbDefaultButton1, "Number Invalid"
@@ -658,10 +669,10 @@ Public windowanimationtargetheight As Integer
                 Call FormMainWindow.LotterySettingsRefresher
             Case "LotteryGroup"
                 If (inputnumber1 * 10 + inputnumber2) > FormMainWindow.lotterytotal Then
-                    MsgBox "[Group] cannot be larger than the lottery number range.", vbExclamation + vbOKOnly + vbDefaultButton1, "Number Invalid"
+                    MsgBox "CAUTION: Number invalid." & vbCrLf & "[Group] cannot be larger than the lottery number range.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
                 Else
                     If (inputnumber1 * 10 + inputnumber2) < 2 Then
-                        MsgBox "[Group] cannot be smaller than 2.", vbExclamation + vbOKOnly + vbDefaultButton1, "Number Invalid"
+                        MsgBox "CAUTION: Number invalid." & vbCrLf & "[Group] cannot be smaller than 2.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
                     Else
                         FormMainWindow.lotterygroup = inputnumber1 * 10 + inputnumber2
                     End If
@@ -680,6 +691,8 @@ Public windowanimationtargetheight As Integer
         LabelInputNumber4.Caption = ">"
         FormMainWindow.Enabled = True: FormMiniMode.Enabled = True: FormInputNumber.Hide
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] ANIMATIONS []
 
@@ -704,4 +717,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
+
+        If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide
     End Sub

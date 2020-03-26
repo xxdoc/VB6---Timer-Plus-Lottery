@@ -9,6 +9,15 @@ Begin VB.Form FormAbout
    ClientTop       =   0
    ClientWidth     =   12930
    FillColor       =   &H000000FF&
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    ForeColor       =   &H000000FF&
    Icon            =   "FormAbout.frx":0000
    LinkTopic       =   "FormAbout"
@@ -60,7 +69,7 @@ Begin VB.Form FormAbout
       ForeColor       =   &H00000000&
       Height          =   1170
       Left            =   210
-      TabIndex        =   34
+      TabIndex        =   41
       Top             =   6300
       Width           =   12510
       Begin VB.Label LabelCopyright2 
@@ -68,19 +77,10 @@ Begin VB.Form FormAbout
          BackColor       =   &H000000FF&
          BackStyle       =   0  'Transparent
          Caption         =   "SAM TOKI STUDIO is a trademark of CZJ Software Technologies (CZJST) Inc. in the P.R.C and other countries."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   36
+         TabIndex        =   43
          Top             =   735
          Width           =   11880
       End
@@ -88,20 +88,11 @@ Begin VB.Form FormAbout
          Appearance      =   0  'Flat
          BackColor       =   &H000000FF&
          BackStyle       =   0  'Transparent
-         Caption         =   "TM && (C) 2015-2019 SAM TOKI STUDIO. All rights reserved."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         Caption         =   "TM && (C) 2015-2020 SAM TOKI STUDIO. All rights reserved."
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   35
+         TabIndex        =   42
          Top             =   420
          Width           =   11880
       End
@@ -122,9 +113,41 @@ Begin VB.Form FormAbout
       ForeColor       =   &H00000000&
       Height          =   5160
       Left            =   6615
-      TabIndex        =   18
+      TabIndex        =   20
       Top             =   945
       Width           =   6105
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkMikanProject 
+         Caption         =   "Mikan Project"
+         Height          =   345
+         Left            =   3980
+         TabIndex        =   40
+         Top             =   4530
+         Width           =   1680
+      End
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkMoegirlWiki 
+         Caption         =   "Moegirl Wiki"
+         Height          =   345
+         Left            =   2310
+         TabIndex        =   39
+         Top             =   4530
+         Width           =   1680
+      End
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkAnimeTwist 
+         Caption         =   "Anime Twist"
+         Height          =   345
+         Left            =   3980
+         TabIndex        =   38
+         Top             =   4200
+         Width           =   1680
+      End
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkMajsoul 
+         Caption         =   "Majsoul"
+         Height          =   345
+         Left            =   2310
+         TabIndex        =   37
+         Top             =   4200
+         Width           =   1680
+      End
       Begin VB.CommandButton CmdAboutAuthorDonate1 
          Caption         =   ">"
          BeginProperty Font 
@@ -138,8 +161,8 @@ Begin VB.Form FormAbout
          EndProperty
          Height          =   420
          Left            =   5330
-         TabIndex        =   33
-         Top             =   4000
+         TabIndex        =   35
+         Top             =   3600
          Width           =   420
       End
       Begin VB.CommandButton CmdAboutAuthorGitHub 
@@ -155,7 +178,7 @@ Begin VB.Form FormAbout
          EndProperty
          Height          =   420
          Left            =   5330
-         TabIndex        =   30
+         TabIndex        =   32
          Top             =   3100
          Width           =   420
       End
@@ -172,7 +195,7 @@ Begin VB.Form FormAbout
          EndProperty
          Height          =   420
          Left            =   5330
-         TabIndex        =   27
+         TabIndex        =   29
          Top             =   2600
          Width           =   420
       End
@@ -193,7 +216,7 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   29
+         TabIndex        =   31
          Text            =   "https://github.com/SamToki"
          Top             =   3100
          Width           =   3105
@@ -215,7 +238,7 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   26
+         TabIndex        =   28
          Text            =   "15759438158@139.com"
          Top             =   2600
          Width           =   3105
@@ -223,15 +246,6 @@ Begin VB.Form FormAbout
       Begin VB.TextBox TextboxAboutAuthorStatus 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
          ForeColor       =   &H00000000&
          Height          =   840
          Left            =   2205
@@ -239,7 +253,7 @@ Begin VB.Form FormAbout
          MousePointer    =   3  'I-Beam
          MultiLine       =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   24
+         TabIndex        =   26
          Text            =   "FormAbout.frx":0E04
          Top             =   1530
          Width           =   3525
@@ -261,7 +275,7 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   22
+         TabIndex        =   24
          Text            =   "SAM TOKI STUDIO of CZJST Inc."
          Top             =   1000
          Width           =   3525
@@ -283,10 +297,40 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   20
+         TabIndex        =   22
          Text            =   "Sam Toki"
          Top             =   480
-         Width           =   3525
+         Width           =   3105
+      End
+      Begin VB.Label LabelAboutAuthorFriendlyLinks 
+         Appearance      =   0  'Flat
+         BackColor       =   &H000000FF&
+         BackStyle       =   0  'Transparent
+         Caption         =   "Friendly Links:"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   375
+         Left            =   315
+         TabIndex        =   36
+         Top             =   4200
+         Width           =   1725
+      End
+      Begin VB.Image ImageSamTokiAvatar 
+         Appearance      =   0  'Flat
+         Height          =   420
+         Left            =   5310
+         Picture         =   "FormAbout.frx":0E6C
+         Stretch         =   -1  'True
+         Top             =   480
+         Width           =   420
       End
       Begin VB.Label LabelAboutAuthorDonate1 
          Appearance      =   0  'Flat
@@ -305,8 +349,8 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   2205
-         TabIndex        =   32
-         Top             =   4095
+         TabIndex        =   34
+         Top             =   3675
          Width           =   3090
       End
       Begin VB.Label LabelAboutAuthorDonate 
@@ -326,8 +370,8 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   31
-         Top             =   4095
+         TabIndex        =   33
+         Top             =   3675
          Width           =   1725
       End
       Begin VB.Label LabelAboutAuhtorStatus 
@@ -347,7 +391,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   23
+         TabIndex        =   25
          Top             =   1575
          Width           =   1725
       End
@@ -368,7 +412,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   28
+         TabIndex        =   30
          Top             =   3150
          Width           =   1725
       End
@@ -389,7 +433,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   25
+         TabIndex        =   27
          Top             =   2625
          Width           =   1725
       End
@@ -410,7 +454,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   21
+         TabIndex        =   23
          Top             =   1050
          Width           =   1725
       End
@@ -431,7 +475,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   19
+         TabIndex        =   21
          Top             =   525
          Width           =   1725
       End
@@ -455,7 +499,41 @@ Begin VB.Form FormAbout
       TabIndex        =   2
       Top             =   945
       Width           =   6105
-      Begin VB.TextBox TextboxAboutAppOpenSourceLicense 
+      Begin VB.CommandButton CmdAboutAppLicenses 
+         Caption         =   ">"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   13.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   420
+         Left            =   5330
+         TabIndex        =   19
+         Top             =   4480
+         Width           =   420
+      End
+      Begin VB.CommandButton CmdAboutAppUpdate 
+         Caption         =   "i"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   13.5
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   420
+         Left            =   5310
+         TabIndex        =   7
+         Top             =   1000
+         Width           =   420
+      End
+      Begin VB.TextBox TextboxAboutAppLicenses 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
@@ -469,13 +547,13 @@ Begin VB.Form FormAbout
          EndProperty
          ForeColor       =   &H00000000&
          Height          =   420
-         Left            =   3360
+         Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   17
-         Text            =   "CC BY-NC 4.0"
+         TabIndex        =   18
+         Text            =   "GNU GPL v3; CC BY-NC 4.0"
          Top             =   4480
-         Width           =   2370
+         Width           =   3105
       End
       Begin VB.TextBox TextboxAboutAppHistory 
          Appearance      =   0  'Flat
@@ -494,7 +572,7 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   14
+         TabIndex        =   15
          Text            =   "First version built on Fri, Mar 24, 2017"
          Top             =   3100
          Width           =   3525
@@ -516,8 +594,8 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   12
-         Text            =   "Mon, Mar 9, 2020"
+         TabIndex        =   13
+         Text            =   "Thu, Mar 26, 2020"
          Top             =   2600
          Width           =   3525
       End
@@ -538,8 +616,8 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   10
-         Text            =   "For Windows 10 Only"
+         TabIndex        =   11
+         Text            =   "For Windows 7,8,10 (tested on Win10 Build 18362)"
          Top             =   2050
          Width           =   3525
       End
@@ -560,31 +638,9 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   8
+         TabIndex        =   9
          Text            =   "English (United States) Only"
          Top             =   1530
-         Width           =   3525
-      End
-      Begin VB.TextBox TextboxAboutAppVersion 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   420
-         Left            =   2205
-         Locked          =   -1  'True
-         MousePointer    =   3  'I-Beam
-         TabIndex        =   6
-         Text            =   "v8.02 Release Version"
-         Top             =   1000
          Width           =   3525
       End
       Begin VB.TextBox TextboxAboutAppName 
@@ -607,7 +663,37 @@ Begin VB.Form FormAbout
          TabIndex        =   4
          Text            =   "Timer+Lottery"
          Top             =   480
-         Width           =   3525
+         Width           =   3105
+      End
+      Begin VB.TextBox TextboxAboutAppVersion 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000000&
+         Height          =   420
+         Left            =   2205
+         Locked          =   -1  'True
+         MousePointer    =   3  'I-Beam
+         TabIndex        =   6
+         Text            =   "v8.02 Release Version"
+         Top             =   1000
+         Width           =   3105
+      End
+      Begin VB.Image ImageAppIcon 
+         Appearance      =   0  'Flat
+         Height          =   480
+         Left            =   5380
+         Picture         =   "FormAbout.frx":1E8EA
+         Top             =   420
+         Width           =   480
       End
       Begin VB.Label LabelAboutAppPlatform 
          Appearance      =   0  'Flat
@@ -626,7 +712,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   9
+         TabIndex        =   10
          Top             =   2100
          Width           =   1725
       End
@@ -647,15 +733,15 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   735
          Left            =   315
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   3780
          Width           =   5400
       End
-      Begin VB.Label LabelAboutAppOpenSourceLicense 
+      Begin VB.Label LabelAboutAppLicenses 
          Appearance      =   0  'Flat
          BackColor       =   &H000000FF&
          BackStyle       =   0  'Transparent
-         Caption         =   "Open Source License:"
+         Caption         =   "Licenses:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   12
@@ -668,9 +754,9 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   16
+         TabIndex        =   17
          Top             =   4515
-         Width           =   2880
+         Width           =   1725
       End
       Begin VB.Label LabelAboutAppBuildDate 
          Appearance      =   0  'Flat
@@ -689,7 +775,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   11
+         TabIndex        =   12
          Top             =   2625
          Width           =   1725
       End
@@ -710,7 +796,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   13
+         TabIndex        =   14
          Top             =   3150
          Width           =   1725
       End
@@ -731,7 +817,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   7
+         TabIndex        =   8
          Top             =   1575
          Width           =   1725
       End
@@ -815,7 +901,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
@@ -827,10 +915,24 @@ Public windowanimationtargetheight As Integer
          ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
     Private Const SW_SHOW = 5
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] COMMANDS []
 
     Public Sub CmdClose_Click()
-        Me.Hide
+        windowanimationtargettop = (Screen.Height / 2)
+        windowanimationtargetleft = (Screen.Width / 2)
+        windowanimationtargetwidth = 0
+        windowanimationtargetheight = 0
+    End Sub
+
+    Public Sub CmdAboutAppUpdate_Click()
+        FormMainWindow.answer = MsgBox("We are sorry but this app is not able to check for update by itself." & vbCrLf & "Would you like to go to the GitHub page of this app so as to maually check it out?", vbQuestion + vbYesNo + vbDefaultButton1, "Timer+Lottery")
+        If FormMainWindow.answer = vbYes Then Call ShellExecute(Me.hWnd, "open", "https://github.com/SamToki/VB6---Timer-Plus-Lottery", "", "", SW_SHOW)
+    End Sub
+    Public Sub CmdAboutAppLicenses_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://www.gnu.org/licenses/gpl-3.0.html", "", "", SW_SHOW)
+        Call ShellExecute(Me.hWnd, "open", "https://creativecommons.org/use-remix/cc-licenses/", "", "", SW_SHOW)
     End Sub
 
     Public Sub CmdAboutAuthorEmail_Click()
@@ -839,9 +941,7 @@ Public windowanimationtargetheight As Integer
     Public Sub CmdAboutAuthorGitHub_Click()
         Call ShellExecute(Me.hWnd, "open", "https://github.com/SamToki", "", "", SW_SHOW)
     End Sub
-
     Public Sub CmdAboutAuthorDonate1_Click()
-        FormDonate1.Show
         FormDonate1.Top = (Screen.Height / 2)
         FormDonate1.Left = (Screen.Width / 2)
         FormDonate1.Width = 0
@@ -850,7 +950,23 @@ Public windowanimationtargetheight As Integer
         FormDonate1.windowanimationtargetleft = (Screen.Width / 2) - (12930 / 2)
         FormDonate1.windowanimationtargetwidth = 12930
         FormDonate1.windowanimationtargetheight = 7785
+        FormDonate1.Show
     End Sub
+
+    Public Sub CmdAboutAuthorFriendlyLinkMajsoul_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://majsoul.com", "", "", SW_SHOW)
+    End Sub
+    Public Sub CmdAboutAuthorFriendlyLinkAnimeTwist_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://twist.moe", "", "", SW_SHOW)
+    End Sub
+    Public Sub CmdAboutAuthorFriendlyLinkMoegirlWiki_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://zh.moegirl.org/Mainpage", "", "", SW_SHOW)
+    End Sub
+    Public Sub CmdAboutAuthorFriendlyLinkMikanProject_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://mikanani.me", "", "", SW_SHOW)
+    End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] ANIMATIONS []
 
@@ -875,4 +991,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
+
+        If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide
     End Sub

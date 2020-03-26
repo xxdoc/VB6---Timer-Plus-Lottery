@@ -11,8 +11,8 @@ Begin VB.Form FormLottery
    ClientWidth     =   15345
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌå"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -20,10 +20,11 @@ Begin VB.Form FormLottery
       Strikethrough   =   0   'False
    EndProperty
    ForeColor       =   &H000000FF&
+   Icon            =   "FormLottery.frx":0000
    LinkTopic       =   "FormLottery"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   MouseIcon       =   "FormLottery.frx":0000
+   MouseIcon       =   "FormLottery.frx":0CB2
    MousePointer    =   99  'Custom
    Moveable        =   0   'False
    ScaleHeight     =   4005
@@ -66,6 +67,15 @@ Begin VB.Form FormLottery
       BackColor       =   &H00E0E0E0&
       BorderStyle     =   0  'None
       FillColor       =   &H000000FF&
+      BeginProperty Font 
+         Name            =   "ËÎÌå"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H000000FF&
       Height          =   2475
       Left            =   105
@@ -123,15 +133,6 @@ Begin VB.Form FormLottery
       BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
       Caption         =   "Timer+Lottery¡¡v8.02¡¡by Sam Toki"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       ForeColor       =   &H00808080&
       Height          =   255
       Left            =   150
@@ -145,7 +146,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
     'ALWAYS FRONT (CODES FROM INTERNET)
         'DISABLED: Dim retValue As Long
@@ -217,6 +220,8 @@ Attribute VB_Exposed = False
             End If
         End Function
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] LOAD []
 
     Public Sub Form_Load()
@@ -230,6 +235,8 @@ Attribute VB_Exposed = False
 
         PictureboxScroll.Left = 20000
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] TIMERS []
 
@@ -320,8 +327,6 @@ Attribute VB_Exposed = False
         End Select
     End Sub
 
-'[] RANDOM NUMBER GENERATOR []
-
     Public Sub TimerLottery_Timer()
         If FormMainWindow.lotteryscrollprogress <= 20 Then
             Call FormMainWindow.RandomNumberGenerator
@@ -336,15 +341,15 @@ Attribute VB_Exposed = False
         If FormMainWindow.lotteryscrollprogress > 20 And FormMainWindow.lotteryscrollprogress < 35 Then
             'ANTI-REPEAT
             If (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord1) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord2) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord3) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord4) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord5) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord6) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord7) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord8) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord9) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecordX) Then
-                LabelHintText.Caption = "OK!"
+                LabelHinttext.Caption = "OK!"
             Else
-                LabelHintText.Caption = "Duplicate item found!"
+                LabelHinttext.Caption = "Duplicate item found!"
                 If FormMainWindow.lotterypreventrepeatswitch = True Then
-                    LabelHintText.Caption = "Duplicate item found!"
+                    LabelHinttext.Caption = "Duplicate item found!"
                     If FormMainWindow.lotteryscrollprogress > 31 Then
                         FormMainWindow.lotteryscrollprogress = 0
                         PictureboxScroll.Left = 20000
-                        LabelHintText.Caption = "Retrying..."
+                        LabelHinttext.Caption = "Retrying..."
                     End If
                 End If
             End If
@@ -357,7 +362,7 @@ Attribute VB_Exposed = False
         FormMainWindow.WindowsMediaPlayer1.URL = ""
         TimerLottery.Enabled = False
         LabelScrollText.Caption = "0"
-        LabelHintText.Caption = "Cancelled!"
+        LabelHinttext.Caption = "Cancelled!"
         FormMainWindow.lotteryscrollprogress = 36
         CmdCancel.Enabled = False
     End Sub

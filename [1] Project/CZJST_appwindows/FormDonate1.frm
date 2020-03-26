@@ -9,6 +9,15 @@ Begin VB.Form FormDonate1
    ClientTop       =   0
    ClientWidth     =   12930
    FillColor       =   &H000000FF&
+   BeginProperty Font 
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    ForeColor       =   &H000000FF&
    Icon            =   "FormDonate1.frx":0000
    LinkTopic       =   "FormAbout"
@@ -174,18 +183,27 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] COMMANDS []
 
     Public Sub CmdClose_Click()
-        Me.Hide
+        windowanimationtargettop = (Screen.Height / 2)
+        windowanimationtargetleft = (Screen.Width / 2)
+        windowanimationtargetwidth = 0
+        windowanimationtargetheight = 0
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] ANIMATIONS []
 
@@ -210,5 +228,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
-    End Sub
 
+        If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide
+    End Sub

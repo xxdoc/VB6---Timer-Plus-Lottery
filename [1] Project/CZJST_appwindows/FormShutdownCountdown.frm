@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormShutdownCountdown 
    Appearance      =   0  'Flat
-   BackColor       =   &H00E0E0E0&
+   BackColor       =   &H00D0D0D0&
    BorderStyle     =   0  'None
    Caption         =   "Timer+Lottery"
    ClientHeight    =   2745
@@ -10,8 +10,8 @@ Begin VB.Form FormShutdownCountdown
    ClientWidth     =   12510
    FillColor       =   &H000000FF&
    BeginProperty Font 
-      Name            =   "ËÎÌå"
-      Size            =   11.25
+      Name            =   "MS Sans Serif"
+      Size            =   9.75
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -103,15 +103,6 @@ Begin VB.Form FormShutdownCountdown
       BackColor       =   &H000000FF&
       BackStyle       =   0  'Transparent
       Caption         =   "Timer+Lottery¡¡v8.02¡¡by Sam Toki"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       ForeColor       =   &H00808080&
       Height          =   255
       Left            =   160
@@ -156,7 +147,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'[] DIM []
+'  ---------------------------------------------------------------------------------------------------------------------
+
+'[] DECLARATIONS []
 
 Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
@@ -175,12 +168,16 @@ Public windowanimationtargetheight As Integer
             Const HWND_TOPMOST = -1
             Const SWP_SHOWWINDOW = &H40
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] LOAD []
 
     Public Sub Form_Load()
         'ALWAYS FRONT (CODES FROM INTERNET)
         retValue = SetWindowPos(Me.hWnd, HWND_TOPMOST, Me.CurrentX, Me.CurrentY, 1, 1, SWP_SHOWWINDOW)
     End Sub
+
+'  ---------------------------------------------------------------------------------------------------------------------
 
 '[] TIMERS []
 
@@ -199,7 +196,12 @@ Public windowanimationtargetheight As Integer
 
     Public Sub CmdCancel_Click()
         TimerShutdownCountdown.Enabled = False
-        FormMainWindow.Enabled = True: FormMiniMode.Enabled = True: FormShutdownCountdown.Hide
+        FormMainWindow.Enabled = True: FormMiniMode.Enabled = True
+
+        windowanimationtargettop = 0
+        windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+        windowanimationtargetwidth = 12510
+        windowanimationtargetheight = 0
     End Sub
     Public Sub CmdOK_Click()
         Select Case FormMainWindow.shutdowncountdowntype
@@ -215,19 +217,21 @@ Public windowanimationtargetheight As Integer
         CmdOK.Visible = False
     End Sub
 
+'  ---------------------------------------------------------------------------------------------------------------------
+
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
         Select Case FormMainWindow.windowanimationswitch
             Case True
-                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 16
-                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 16
-                If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 16
-                If Me.Left < windowanimationtargetleft Then Me.Left = Me.Left + Abs(Me.Left - windowanimationtargetleft) / 16
-                If Me.Width > windowanimationtargetwidth Then Me.Width = Me.Width - Abs(Me.Width - windowanimationtargetwidth) / 16
-                If Me.Width < windowanimationtargetwidth Then Me.Width = Me.Width + Abs(Me.Width - windowanimationtargetwidth) / 16
-                If Me.Height > windowanimationtargetheight Then Me.Height = Me.Height - Abs(Me.Height - windowanimationtargetheight) / 16
-                If Me.Height < windowanimationtargetheight Then Me.Height = Me.Height + Abs(Me.Height - windowanimationtargetheight) / 16
+                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 8  'This case must be slower than others...
+                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 8
+                If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 8
+                If Me.Left < windowanimationtargetleft Then Me.Left = Me.Left + Abs(Me.Left - windowanimationtargetleft) / 8
+                If Me.Width > windowanimationtargetwidth Then Me.Width = Me.Width - Abs(Me.Width - windowanimationtargetwidth) / 8
+                If Me.Width < windowanimationtargetwidth Then Me.Width = Me.Width + Abs(Me.Width - windowanimationtargetwidth) / 8
+                If Me.Height > windowanimationtargetheight Then Me.Height = Me.Height - Abs(Me.Height - windowanimationtargetheight) / 8
+                If Me.Height < windowanimationtargetheight Then Me.Height = Me.Height + Abs(Me.Height - windowanimationtargetheight) / 8
                 If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Left - windowanimationtargetleft) < 10 Then Me.Left = windowanimationtargetleft
                 If Abs(Me.Width - windowanimationtargetwidth) < 10 Then Me.Width = windowanimationtargetwidth
@@ -238,4 +242,6 @@ Public windowanimationtargetheight As Integer
                 Me.Width = windowanimationtargetwidth
                 Me.Height = windowanimationtargetheight
         End Select
+
+        If windowanimationtargetheight = 0 And Me.Height < 100 Then Me.Hide  'This case must be slower than others...
     End Sub
