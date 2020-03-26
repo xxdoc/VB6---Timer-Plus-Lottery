@@ -1,4 +1,4 @@
-# [VB6] Timer+Lottery 计时+摇号工具
+# [VB6] Timer+Lottery / 计时+摇号工具 / タイマー＋サイコロ
 
 ## Downloads / 下载 / ダウンロード
 
