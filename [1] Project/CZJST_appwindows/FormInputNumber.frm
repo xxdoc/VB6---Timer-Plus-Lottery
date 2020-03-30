@@ -697,6 +697,8 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
+        If Me.Height = windowanimationtargetheight Then Exit Sub
+
         Select Case FormMainWindow.windowanimationswitch
             Case True
                 If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4

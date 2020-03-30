@@ -518,14 +518,14 @@ Public windowanimationtargetheight As Integer
                 CheckboxLotteryDarkTheme.Value = 0
                 FormLottery.BackColor = &HE0E0E0
                 FormLottery.PictureboxScroll.BackColor = &HE0E0E0
-                FormLottery.LabelHintText.ForeColor = &HFF6600
+                FormLottery.LabelHinttext.ForeColor = &HFF6600
                 FormLottery.LabelScrollText.ForeColor = &H0
             Case False
                 FormMainWindow.lotterywindowdarkthemeswitch = True
                 CheckboxLotteryDarkTheme.Value = 1
                 FormLottery.BackColor = &H0
                 FormLottery.PictureboxScroll.BackColor = &H0
-                FormLottery.LabelHintText.ForeColor = &HFFAA00
+                FormLottery.LabelHinttext.ForeColor = &HFFAA00
                 FormLottery.LabelScrollText.ForeColor = &HFFFFFF
         End Select
     End Sub
@@ -763,6 +763,8 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
+        If Me.Height = windowanimationtargetheight Then Exit Sub
+
         Select Case FormMainWindow.windowanimationswitch
             Case True
                 If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4
