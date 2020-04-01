@@ -250,7 +250,7 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
-        If Me.Height = windowanimationtargetheight Then Exit Sub
+        If ((Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
 
         Select Case FormMainWindow.windowanimationswitch
             Case True
