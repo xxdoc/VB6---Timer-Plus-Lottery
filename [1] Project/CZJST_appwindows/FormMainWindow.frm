@@ -1150,7 +1150,7 @@ Begin VB.Form FormMainWindow
       _cy             =   741
    End
    Begin VB.Menu MenuTimer 
-      Caption         =   "Timer"
+      Caption         =   "&Timer"
       Begin VB.Menu MenuTimerStartPauseResume 
          Caption         =   "Start"
          Shortcut        =   {F5}
@@ -1172,7 +1172,7 @@ Begin VB.Form FormMainWindow
       End
    End
    Begin VB.Menu MenuLottery 
-      Caption         =   "Lottery"
+      Caption         =   "Lo&ttery"
       Begin VB.Menu MenuLotteryStartLottery 
          Caption         =   "Start Lottery"
          Shortcut        =   {F7}
@@ -1190,7 +1190,7 @@ Begin VB.Form FormMainWindow
       End
    End
    Begin VB.Menu MenuCtrlExtras 
-      Caption         =   "Extras"
+      Caption         =   "&Extras"
       Begin VB.Menu MenuExtrasMiniMode 
          Caption         =   "Mini Mode"
          Shortcut        =   {F2}
@@ -1235,17 +1235,17 @@ Begin VB.Form FormMainWindow
       Enabled         =   0   'False
    End
    Begin VB.Menu MenuSettings 
-      Caption         =   "Settings..."
+      Caption         =   "&Settings..."
    End
    Begin VB.Menu MenuAbout 
-      Caption         =   "About..."
+      Caption         =   "&About..."
    End
    Begin VB.Menu Menu2_ 
       Caption         =   "¡¡|¡¡"
       Enabled         =   0   'False
    End
    Begin VB.Menu MenuLanguage 
-      Caption         =   "£Á×Ö¤¢"
+      Caption         =   "£Á×Ö¤¢ (&L)"
       Begin VB.Menu MenuLanguageENG 
          Caption         =   "English (United States)"
          Checked         =   -1  'True
@@ -1272,7 +1272,7 @@ Begin VB.Form FormMainWindow
       Enabled         =   0   'False
    End
    Begin VB.Menu MenuEXIT 
-      Caption         =   "EXIT"
+      Caption         =   "E&XIT"
    End
 End
 Attribute VB_Name = "FormMainWindow"
@@ -1858,7 +1858,7 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         lotteryscrolltext = "N/A"
 
         lotteryscrollprogress = 0
-        FormLottery.LabelHintText = lotteryhinttext
+        FormLottery.LabelHinttext = lotteryhinttext
         FormLottery.LabelScrollText = lotteryscrolltext
         FormLottery.TimerScroll.Enabled = True
         FormLottery.TimerLottery.Enabled = True
