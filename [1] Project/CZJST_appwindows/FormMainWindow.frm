@@ -1172,7 +1172,7 @@ Begin VB.Form FormMainWindow
       End
    End
    Begin VB.Menu MenuLottery 
-      Caption         =   "Lo&ttery"
+      Caption         =   "L&ottery"
       Begin VB.Menu MenuLotteryStartLottery 
          Caption         =   "Start Lottery"
          Shortcut        =   {F7}
