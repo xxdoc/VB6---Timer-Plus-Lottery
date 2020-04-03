@@ -1,10 +1,10 @@
 # [VB6] Timer+Lottery / 计时+摇号工具 / タイマー＋サイコロ
 
-## Downloads / 下载 / ダウンロード
+## Downloads / 下载 / ダウンロード / 다운로드
 
 [Timer+Lottery v8.02.zip](https://raw.githubusercontent.com/SamToki/VB6---Timer-Plus-Lottery/master/%5B2%5D%20EXE/Timer%2BLottery%20v8.02.zip)
 
-## Screenshots / 屏幕截图 / スクリーンショット
+## Screenshots / 屏幕截图 / スクリーンショット / 스크린샷
 
 ![](https://github.com/SamToki/VB6---Timer-Plus-Lottery/blob/master/%5B3%5D%20Screenshots/Screenshot%201%20-%20Main%20Window.png)<br>
 ![](https://github.com/SamToki/VB6---Timer-Plus-Lottery/blob/master/%5B3%5D%20Screenshots/Screenshot%202%20-%20Mini%20Mode%20(Floating%20Window).png)<br>
