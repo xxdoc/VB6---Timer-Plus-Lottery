@@ -1,6 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormBigFloatingClock 
    Appearance      =   0  'Flat
+   AutoRedraw      =   -1  'True
    BackColor       =   &H00000000&
    BorderStyle     =   0  'None
    Caption         =   "Timer+Lottery"
@@ -226,7 +227,7 @@ Public bigfloatingclockautohidetimeout As Integer
 
     Public Sub Form_Load()
         'ALWAYS FRONT (CODES FROM INTERNET)
-            retValue = SetWindowPos(Me.hWnd, HWND_TOPMOST, Me.CurrentX, Me.CurrentY, 160, 80, SWP_SHOWWINDOW)
+            retValue = SetWindowPos(Me.hWnd, HWND_TOPMOST, Me.CurrentX, Me.CurrentY, 1, 1, SWP_SHOWWINDOW)
         'BACKGROUND TRANSPARENT (CODES FROM INTERNET)
             Me.BackColor = &H0
             Dim rtn As Long
@@ -237,10 +238,7 @@ Public bigfloatingclockautohidetimeout As Integer
             SetWindowLong hWnd, GWL_EXSTYLE, rtn
             SetLayeredWindowAttributes hWnd, &H0, 0, LWA_COLORKEY
         'LOCATE POSITION
-            Me.Width = 2430
-            Me.Height = 1275
-            Me.Left = 0
-            Me.Top = 0
+            Me.Move 0, 0, 2430, 1275
 
         bigfloatingclockoclockblinkongoing = False
         bigfloatingclockoclockblinkrepeatedtimes = 0
@@ -369,10 +367,7 @@ Public bigfloatingclockautohidetimeout As Integer
             SetWindowLong hWnd, GWL_EXSTYLE, rtn
             SetLayeredWindowAttributes hWnd, &H0, 0, LWA_COLORKEY
         'LOCATE POSITION
-            Me.Width = 2430
-            Me.Height = 1275
-            Me.Left = 0
-            Me.Top = 0
+            Me.Move 0, 0, 2430, 1275
     End Sub
 
 '[] COMMANDS []

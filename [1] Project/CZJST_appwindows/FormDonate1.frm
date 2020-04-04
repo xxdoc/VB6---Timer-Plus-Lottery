@@ -1,6 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormDonate1 
    Appearance      =   0  'Flat
+   AutoRedraw      =   -1  'True
    BackColor       =   &H00D0D0D0&
    BorderStyle     =   0  'None
    Caption         =   "Timer+Lottery"
@@ -28,7 +29,6 @@ Begin VB.Form FormDonate1
    ScaleHeight     =   7785
    ScaleWidth      =   12930
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   1  '所有者中心
    Begin VB.Timer TimerWindowAnimation 
       Interval        =   1
       Left            =   12600
@@ -187,8 +187,8 @@ Attribute VB_Exposed = False
 
 '[] DECLARATIONS []
 
-Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
+Public windowanimationtargettop As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
 
@@ -197,8 +197,8 @@ Public windowanimationtargetheight As Integer
 '[] COMMANDS []
 
     Public Sub CmdClose_Click()
-        windowanimationtargettop = (Screen.Height / 2)
         windowanimationtargetleft = (Screen.Width / 2)
+        windowanimationtargettop = (Screen.Height / 2)
         windowanimationtargetwidth = 0
         windowanimationtargetheight = 0
     End Sub
@@ -208,27 +208,24 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
-        If ((Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
+        If ((Me.Left = windowanimationtargetleft) And (Me.Top = windowanimationtargettop) And (Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
 
-        Select Case FormMainWindow.windowanimationswitch
+        Select Case FormMainWindow.setanimationswitch
             Case True
-                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4
-                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 4
                 If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 4
                 If Me.Left < windowanimationtargetleft Then Me.Left = Me.Left + Abs(Me.Left - windowanimationtargetleft) / 4
+                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4
+                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 4
                 If Me.Width > windowanimationtargetwidth Then Me.Width = Me.Width - Abs(Me.Width - windowanimationtargetwidth) / 4
                 If Me.Width < windowanimationtargetwidth Then Me.Width = Me.Width + Abs(Me.Width - windowanimationtargetwidth) / 4
                 If Me.Height > windowanimationtargetheight Then Me.Height = Me.Height - Abs(Me.Height - windowanimationtargetheight) / 4
                 If Me.Height < windowanimationtargetheight Then Me.Height = Me.Height + Abs(Me.Height - windowanimationtargetheight) / 4
-                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Left - windowanimationtargetleft) < 10 Then Me.Left = windowanimationtargetleft
+                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Width - windowanimationtargetwidth) < 10 Then Me.Width = windowanimationtargetwidth
                 If Abs(Me.Height - windowanimationtargetheight) < 10 Then Me.Height = windowanimationtargetheight
             Case False
-                Me.Top = windowanimationtargettop
-                Me.Left = windowanimationtargetleft
-                Me.Width = windowanimationtargetwidth
-                Me.Height = windowanimationtargetheight
+                Me.Move windowanimationtargetleft, windowanimationtargettop, windowanimationtargetwidth, windowanimationtargetheight
         End Select
 
         If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide

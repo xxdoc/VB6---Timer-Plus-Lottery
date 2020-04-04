@@ -1,6 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormMiniMode 
    Appearance      =   0  'Flat
+   AutoRedraw      =   -1  'True
    BackColor       =   &H00000000&
    BorderStyle     =   0  'None
    Caption         =   "Timer+Lottery"
@@ -452,8 +453,8 @@ Public minimodeclockoclockblinksetopacity As Integer
 Public minimoderesponsemonitorbefore As Integer
 Public minimoderesponsemonitorafter As Integer
 
-Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
+Public windowanimationtargettop As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
 
@@ -538,20 +539,16 @@ Public windowanimationtargetheight As Integer
         MakeTransparent Me.hWnd, 255 * 0.8
 
         'LOCATE POSITION
-        Me.Top = 0
-        Me.Left = 0
-        Me.Width = 0
-        Me.Height = 0
-        windowanimationtargettop = 0
+        Me.Move 0, 0, 0, 0
         windowanimationtargetleft = 0
+        windowanimationtargettop = 0
         Select Case FormMainWindow.minimodeclockalwaysshowdateswitch
             Case True
                 windowanimationtargetwidth = 2200
-                windowanimationtargetheight = 400
             Case False
                 windowanimationtargetwidth = 1050
-                windowanimationtargetheight = 400
         End Select
+        windowanimationtargetheight = 400
 
         FormMainWindow.minimodeautohidetimeout = -1
         minimodeclockoclockblinkongoing = False
@@ -572,19 +569,18 @@ Public windowanimationtargetheight As Integer
 
     Public Sub TimerMiniModeAutoHide_Timer()
         'LOCATE POSITION
-        windowanimationtargettop = 0
         windowanimationtargetleft = 0
+        windowanimationtargettop = 0
         'Auto Hide Timeout
         FormMainWindow.minimodeautohidetimeout = FormMainWindow.minimodeautohidetimeout - 1
         If FormMainWindow.minimodeautohidetimeout < 0 Then
             Select Case FormMainWindow.minimodeclockalwaysshowdateswitch
                 Case True
                     windowanimationtargetwidth = 2200
-                    windowanimationtargetheight = 400
                 Case False
                     If (FormMainWindow.minimodetimeroverwritedateswitch = True And FormMainWindow.timerswitch = True) Then windowanimationtargetwidth = 2200 Else windowanimationtargetwidth = 1050
-                    windowanimationtargetheight = 400
             End Select
+            windowanimationtargetheight = 400
         Else
             windowanimationtargetwidth = 4455
             windowanimationtargetheight = 1830
@@ -629,8 +625,8 @@ Public windowanimationtargetheight As Integer
             MsgBox "CAUTION: The main window of Timer+Lottery is not responding." & vbCrLf & "Fixing the problem automatically.", vbExclamation + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
 
             FormMiniMode.Show
-            FormMiniMode.windowanimationtargettop = 0
             FormMiniMode.windowanimationtargetleft = 0
+            FormMiniMode.windowanimationtargettop = 0
             FormMiniMode.windowanimationtargetwidth = 4455
             FormMiniMode.windowanimationtargetheight = 1830
             FormMainWindow.minimodeautohidetimeout = 10
@@ -714,8 +710,8 @@ Public windowanimationtargetheight As Integer
                 MsgBox "ERROR: Mini mode auto hide set timeout is out of range." & vbCrLf & "Please send a feedback to us so as to help solve the problem. Thank you very much.", vbCritical + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
         End Select
         'LOCATE POSITION
-        windowanimationtargettop = 0
         windowanimationtargetleft = 0
+        windowanimationtargettop = 0
         windowanimationtargetwidth = 4455
         windowanimationtargetheight = 1830
     End Sub
@@ -731,8 +727,8 @@ Public windowanimationtargetheight As Integer
                 MsgBox "ERROR: Mini mode auto hide set timeout is out of range." & vbCrLf & "Please send a feedback to us so as to help solve the problem. Thank you very much.", vbCritical + vbOKOnly + vbDefaultButton1, "Timer+Lottery"
         End Select
         'LOCATE POSITION
-        windowanimationtargettop = 0
         windowanimationtargetleft = 0
+        windowanimationtargettop = 0
         windowanimationtargetwidth = 4455
         windowanimationtargetheight = 1830
     End Sub
@@ -773,27 +769,24 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
-        If ((Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
+        If ((Me.Left = windowanimationtargetleft) And (Me.Top = windowanimationtargettop) And (Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
 
-        Select Case FormMainWindow.windowanimationswitch
+        Select Case FormMainWindow.setanimationswitch
             Case True
-                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4
-                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 4
                 If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 4
                 If Me.Left < windowanimationtargetleft Then Me.Left = Me.Left + Abs(Me.Left - windowanimationtargetleft) / 4
+                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 4
+                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 4
                 If Me.Width > windowanimationtargetwidth Then Me.Width = Me.Width - Abs(Me.Width - windowanimationtargetwidth) / 4
                 If Me.Width < windowanimationtargetwidth Then Me.Width = Me.Width + Abs(Me.Width - windowanimationtargetwidth) / 4
                 If Me.Height > windowanimationtargetheight Then Me.Height = Me.Height - Abs(Me.Height - windowanimationtargetheight) / 4
                 If Me.Height < windowanimationtargetheight Then Me.Height = Me.Height + Abs(Me.Height - windowanimationtargetheight) / 4
-                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Left - windowanimationtargetleft) < 10 Then Me.Left = windowanimationtargetleft
+                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Width - windowanimationtargetwidth) < 10 Then Me.Width = windowanimationtargetwidth
                 If Abs(Me.Height - windowanimationtargetheight) < 10 Then Me.Height = windowanimationtargetheight
             Case False
-                Me.Top = windowanimationtargettop
-                Me.Left = windowanimationtargetleft
-                Me.Width = windowanimationtargetwidth
-                Me.Height = windowanimationtargetheight
+                Me.Move windowanimationtargetleft, windowanimationtargettop, windowanimationtargetwidth, windowanimationtargetheight
         End Select
 
         If windowanimationtargetheight = 0 And Me.Height < 10 Then Me.Hide

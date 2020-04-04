@@ -1,6 +1,7 @@
 VERSION 5.00
 Begin VB.Form FormShutdownCountdown 
    Appearance      =   0  'Flat
+   AutoRedraw      =   -1  'True
    BackColor       =   &H00D0D0D0&
    BorderStyle     =   0  'None
    Caption         =   "Timer+Lottery"
@@ -29,7 +30,6 @@ Begin VB.Form FormShutdownCountdown
    ScaleHeight     =   2745
    ScaleWidth      =   12510
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin VB.Timer TimerWindowAnimation 
       Interval        =   1
       Left            =   12180
@@ -151,8 +151,8 @@ Attribute VB_Exposed = False
 
 '[] DECLARATIONS []
 
-Public windowanimationtargettop As Integer
 Public windowanimationtargetleft As Integer
+Public windowanimationtargettop As Integer
 Public windowanimationtargetwidth As Integer
 Public windowanimationtargetheight As Integer
 
@@ -198,8 +198,8 @@ Public windowanimationtargetheight As Integer
         TimerShutdownCountdown.Enabled = False
         FormMainWindow.Enabled = True: FormMiniMode.Enabled = True
 
-        windowanimationtargettop = 0
         windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+        windowanimationtargettop = 0
         windowanimationtargetwidth = 12510
         windowanimationtargetheight = 0
     End Sub
@@ -222,27 +222,24 @@ Public windowanimationtargetheight As Integer
 '[] ANIMATIONS []
 
     Public Sub TimerWindowAnimation_Timer()
-        If ((Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
+        If ((Me.Left = windowanimationtargetleft) And (Me.Top = windowanimationtargettop) And (Me.Width = windowanimationtargetwidth) And (Me.Height = windowanimationtargetheight)) Then Exit Sub
 
-        Select Case FormMainWindow.windowanimationswitch
+        Select Case FormMainWindow.setanimationswitch
             Case True
-                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 8  'This case must be slower than others...
-                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 8
-                If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 8
+                If Me.Left > windowanimationtargetleft Then Me.Left = Me.Left - Abs(Me.Left - windowanimationtargetleft) / 8  'This case must be slower than others...
                 If Me.Left < windowanimationtargetleft Then Me.Left = Me.Left + Abs(Me.Left - windowanimationtargetleft) / 8
+                If Me.Top > windowanimationtargettop Then Me.Top = Me.Top - Abs(Me.Top - windowanimationtargettop) / 8
+                If Me.Top < windowanimationtargettop Then Me.Top = Me.Top + Abs(Me.Top - windowanimationtargettop) / 8
                 If Me.Width > windowanimationtargetwidth Then Me.Width = Me.Width - Abs(Me.Width - windowanimationtargetwidth) / 8
                 If Me.Width < windowanimationtargetwidth Then Me.Width = Me.Width + Abs(Me.Width - windowanimationtargetwidth) / 8
                 If Me.Height > windowanimationtargetheight Then Me.Height = Me.Height - Abs(Me.Height - windowanimationtargetheight) / 8
                 If Me.Height < windowanimationtargetheight Then Me.Height = Me.Height + Abs(Me.Height - windowanimationtargetheight) / 8
-                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Left - windowanimationtargetleft) < 10 Then Me.Left = windowanimationtargetleft
+                If Abs(Me.Top - windowanimationtargettop) < 10 Then Me.Top = windowanimationtargettop
                 If Abs(Me.Width - windowanimationtargetwidth) < 10 Then Me.Width = windowanimationtargetwidth
                 If Abs(Me.Height - windowanimationtargetheight) < 10 Then Me.Height = windowanimationtargetheight
             Case False
-                Me.Top = windowanimationtargettop
-                Me.Left = windowanimationtargetleft
-                Me.Width = windowanimationtargetwidth
-                Me.Height = windowanimationtargetheight
+                Me.Move windowanimationtargetleft, windowanimationtargettop, windowanimationtargetwidth, windowanimationtargetheight
         End Select
 
         If windowanimationtargetheight = 0 And Me.Height < 100 Then Me.Hide  'This case must be slower than others...

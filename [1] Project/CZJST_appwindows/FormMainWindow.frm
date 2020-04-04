@@ -931,6 +931,7 @@ Begin VB.Form FormMainWindow
          Height          =   360
          Left            =   315
          Locked          =   -1  'True
+         MousePointer    =   3  'I-Beam
          TabIndex        =   31
          Text            =   "0"
          Top             =   1560
@@ -1344,7 +1345,7 @@ Public shutdowncountdowntype As String
 Public shutdowncountdowntimeout As Integer
 
 'Declare SettingsDisplay...
-Public windowanimationswitch As Boolean
+Public setanimationswitch As Boolean
 Public useoldscrollanimationinlotterywindowswitch As Boolean
 Public lightbulbindicatorsswitch As Boolean
 
@@ -1436,7 +1437,7 @@ Public answer
         shutdowncountdowntype = "Shutdown"
         shutdowncountdowntimeout = 16
 
-        windowanimationswitch = True
+        setanimationswitch = True
         useoldscrollanimationinlotterywindowswitch = False
         lightbulbindicatorsswitch = True
 
@@ -1629,7 +1630,7 @@ Public answer
                 End If
         End Select
 
-        'TIME UP!
+        'Time up...
         If timercountdowntime < 0 Then
             If FormTimeUp.TimerExpiredTimeCount.Enabled = True Then Exit Sub
             timerswitch = False
@@ -1637,16 +1638,14 @@ Public answer
             Call FormTimeUp.TimerExpiredTimeCount_Timer
             FormTimeUp.TimerExpiredTimeCount.Enabled = True
             FormTimeUp.TimerTimeUpTextBlink.Enabled = True
-            FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormTimeUp.Show
-            FormTimeUp.Top = -2745
-            FormTimeUp.Left = (Screen.Width / 2) - (12510 / 2)
-            FormTimeUp.Width = 12510
-            FormTimeUp.Height = 0
-            FormTimeUp.windowanimationtargettop = (Screen.Height / 2) - (2745 / 2)
+            FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+            FormTimeUp.Move ((Screen.Width / 2) - (12510 / 2)), -2745, 12510, 0
             FormTimeUp.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+            FormTimeUp.windowanimationtargettop = (Screen.Height / 2) - (2745 / 2)
             FormTimeUp.windowanimationtargetwidth = 12510
             FormTimeUp.windowanimationtargetheight = 2745
-            'shut down when time is up
+            FormTimeUp.Show
+            'Shut down computer when time is up...
             If shutdownwhentimeupswitch = True Then
                 shutdowncountdowntype = "Shutdown"
                 shutdowncountdowntimeout = 16
@@ -1654,15 +1653,13 @@ Public answer
                 FormShutdownCountdown.LabelHinttextB.Caption = "Please save your files in time."
                 FormShutdownCountdown.CmdOK.Caption = "SHUT DOWN NOW"
                 FormShutdownCountdown.TimerShutdownCountdown.Enabled = True
-                FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormShutdownCountdown.Show
-                FormShutdownCountdown.Top = -2745
-                FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
-                FormShutdownCountdown.Width = 12510
-                FormShutdownCountdown.Height = 0
-                FormShutdownCountdown.windowanimationtargettop = 0
+                FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+                FormShutdownCountdown.Move ((Screen.Width / 2) - (12510 / 2)), -2745, 12510, 0
                 FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+                FormShutdownCountdown.windowanimationtargettop = 0
                 FormShutdownCountdown.windowanimationtargetwidth = 12510
                 FormShutdownCountdown.windowanimationtargetheight = 2745
+                FormShutdownCountdown.Show
             End If
         End If
     End Sub
@@ -1788,26 +1785,20 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         Call MenuEXIT_Click
     End Sub
     Public Sub MenuAbout_Click()
-        FormAbout.Show
-        FormAbout.Top = (Screen.Height / 2)
-        FormAbout.Left = (Screen.Width / 2)
-        FormAbout.Width = 0
-        FormAbout.Height = 0
-        FormAbout.windowanimationtargettop = (Screen.Height / 2) - (7785 / 2)
+        FormAbout.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormAbout.windowanimationtargetleft = (Screen.Width / 2) - (12930 / 2)
+        FormAbout.windowanimationtargettop = (Screen.Height / 2) - (7785 / 2)
         FormAbout.windowanimationtargetwidth = 12930
         FormAbout.windowanimationtargetheight = 7785
+        FormAbout.Show
     End Sub
     Public Sub MenuSettings_Click()
-        FormSettings.Show
-        FormSettings.Top = (Screen.Height / 2)
-        FormSettings.Left = (Screen.Width / 2)
-        FormSettings.Width = 0
-        FormSettings.Height = 0
-        FormSettings.windowanimationtargettop = (Screen.Height / 2) - (6945 / 2)
+        FormSettings.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormSettings.windowanimationtargetleft = (Screen.Width / 2) - (12930 / 2)
+        FormSettings.windowanimationtargettop = (Screen.Height / 2) - (6945 / 2)
         FormSettings.windowanimationtargetwidth = 12930
         FormSettings.windowanimationtargetheight = 6945
+        FormSettings.Show
     End Sub
 
     Public Sub MenuTimerStartPauseResume_Click()
@@ -1858,7 +1849,7 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         lotteryscrolltext = "N/A"
 
         lotteryscrollprogress = 0
-        FormLottery.LabelHinttext = lotteryhinttext
+        FormLottery.LabelHintText = lotteryhinttext
         FormLottery.LabelScrollText = lotteryscrolltext
         FormLottery.TimerScroll.Enabled = True
         FormLottery.TimerLottery.Enabled = True
@@ -1924,12 +1915,9 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
     End Sub
 
     Public Sub MenuExtrasMiniMode_Click()
-        FormMiniMode.Top = 0
-        FormMiniMode.Left = 0
-        FormMiniMode.Width = 0
-        FormMiniMode.Height = 0
-        FormMiniMode.windowanimationtargettop = 0
+        FormMiniMode.Move 0, 0, 0, 0
         FormMiniMode.windowanimationtargetleft = 0
+        FormMiniMode.windowanimationtargettop = 0
         FormMiniMode.windowanimationtargetwidth = 4455
         FormMiniMode.windowanimationtargetheight = 1830
         FormMiniMode.Show
@@ -2002,16 +1990,14 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormShutdownCountdown.LabelHinttextB.Caption = "Please save your files in time."
         FormShutdownCountdown.CmdOK.Caption = "SHUT DOWN NOW"
         FormShutdownCountdown.TimerShutdownCountdown.Enabled = True
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormShutdownCountdown.Show
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
 
-        FormShutdownCountdown.Top = -2745
-        FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
-        FormShutdownCountdown.Width = 12510
-        FormShutdownCountdown.Height = 0
-        FormShutdownCountdown.windowanimationtargettop = 0
+        FormShutdownCountdown.Move ((Screen.Width / 2) - (12510 / 2)), -2745, 12510, 0
         FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+        FormShutdownCountdown.windowanimationtargettop = 0
         FormShutdownCountdown.windowanimationtargetwidth = 12510
         FormShutdownCountdown.windowanimationtargetheight = 2745
+        FormShutdownCountdown.Show
     End Sub
     Public Sub CmdShutDownComputer_Click()
         Call MenuExtrasShutDownComputer_Click
@@ -2023,16 +2009,14 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormShutdownCountdown.LabelHinttextB.Caption = "Please save your files in time."
         FormShutdownCountdown.CmdOK.Caption = "RESTART NOW"
         FormShutdownCountdown.TimerShutdownCountdown.Enabled = True
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormShutdownCountdown.Show
-        
-        FormShutdownCountdown.Top = -2745
-        FormShutdownCountdown.Left = (Screen.Width / 2) - (12510 / 2)
-        FormShutdownCountdown.Width = 12510
-        FormShutdownCountdown.Height = 0
-        FormShutdownCountdown.windowanimationtargettop = 0
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+
+        FormShutdownCountdown.Move ((Screen.Width / 2) - (12510 / 2)), -2745, 12510, 0
         FormShutdownCountdown.windowanimationtargetleft = (Screen.Width / 2) - (12510 / 2)
+        FormShutdownCountdown.windowanimationtargettop = 0
         FormShutdownCountdown.windowanimationtargetwidth = 12510
         FormShutdownCountdown.windowanimationtargetheight = 2745
+        FormShutdownCountdown.Show
     End Sub
     Public Sub CmdRestartComputer_Click()
         Call MenuExtrasRestartComputer_Click
@@ -2047,15 +2031,13 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormInputNumber.LabelInputNumber2.Caption = ">"
         FormInputNumber.LabelInputNumber3.Caption = ">"
         FormInputNumber.LabelInputNumber4.Caption = ""
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormInputNumber.Show
-        FormInputNumber.Top = (Screen.Height / 2)
-        FormInputNumber.Left = (Screen.Width / 2)
-        FormInputNumber.Width = 0
-        FormInputNumber.Height = 0
-        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+        FormInputNumber.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormInputNumber.windowanimationtargetleft = (Screen.Width / 2) - (6210 / 2)
+        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
         FormInputNumber.windowanimationtargetwidth = 6210
         FormInputNumber.windowanimationtargetheight = 5895
+        FormInputNumber.Show
     End Sub
     Public Sub CmdTimerSecInput_Click()
         inputnumbermode = "TimerSec"
@@ -2065,15 +2047,13 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormInputNumber.LabelInputNumber2.Caption = ">"
         FormInputNumber.LabelInputNumber3.Caption = ""
         FormInputNumber.LabelInputNumber4.Caption = ""
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormInputNumber.Show
-        FormInputNumber.Top = (Screen.Height / 2)
-        FormInputNumber.Left = (Screen.Width / 2)
-        FormInputNumber.Width = 0
-        FormInputNumber.Height = 0
-        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+        FormInputNumber.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormInputNumber.windowanimationtargetleft = (Screen.Width / 2) - (6210 / 2)
+        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
         FormInputNumber.windowanimationtargetwidth = 6210
         FormInputNumber.windowanimationtargetheight = 5895
+        FormInputNumber.Show
     End Sub
     Public Sub CmdLotteryTotalInput_Click()
         inputnumbermode = "LotteryTotal"
@@ -2083,15 +2063,13 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormInputNumber.LabelInputNumber2.Caption = ">"
         FormInputNumber.LabelInputNumber3.Caption = ">"
         FormInputNumber.LabelInputNumber4.Caption = ">"
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormInputNumber.Show
-        FormInputNumber.Top = (Screen.Height / 2)
-        FormInputNumber.Left = (Screen.Width / 2)
-        FormInputNumber.Width = 0
-        FormInputNumber.Height = 0
-        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+        FormInputNumber.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormInputNumber.windowanimationtargetleft = (Screen.Width / 2) - (6210 / 2)
+        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
         FormInputNumber.windowanimationtargetwidth = 6210
         FormInputNumber.windowanimationtargetheight = 5895
+        FormInputNumber.Show
     End Sub
     Public Sub CmdLotteryGroupInput_Click()
         inputnumbermode = "LotteryGroup"
@@ -2101,15 +2079,13 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormInputNumber.LabelInputNumber2.Caption = ">"
         FormInputNumber.LabelInputNumber3.Caption = ""
         FormInputNumber.LabelInputNumber4.Caption = ""
-        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False: FormInputNumber.Show
-        FormInputNumber.Top = (Screen.Height / 2)
-        FormInputNumber.Left = (Screen.Width / 2)
-        FormInputNumber.Width = 0
-        FormInputNumber.Height = 0
-        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
+        FormMainWindow.Enabled = False: FormMiniMode.Enabled = False
+        FormInputNumber.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
         FormInputNumber.windowanimationtargetleft = (Screen.Width / 2) - (6210 / 2)
+        FormInputNumber.windowanimationtargettop = (Screen.Height / 2) - (5895 / 2)
         FormInputNumber.windowanimationtargetwidth = 6210
         FormInputNumber.windowanimationtargetheight = 5895
+        FormInputNumber.Show
     End Sub
 
     Public Sub CmdTimerMinPlus10_Click()

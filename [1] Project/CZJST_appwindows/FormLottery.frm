@@ -226,7 +226,7 @@ Attribute VB_Exposed = False
 
     Public Sub Form_Load()
         'ALWAYS FRONT (CODES FROM INTERNET)
-            'DISABLED: retValue = SetWindowPos(Me.hWnd, HWND_TOPMOST, Me.CurrentX, Me.CurrentY, 233, 233, SWP_SHOWWINDOW)
+            'DISABLED: retValue = SetWindowPos(Me.hWnd, HWND_TOPMOST, Me.CurrentX, Me.CurrentY, 1, 1, SWP_SHOWWINDOW)
         'HALF TRANSPARENT (CODES FROM INTERNET)
         MakeTransparent Me.hWnd, 0
 
@@ -278,7 +278,7 @@ Attribute VB_Exposed = False
                 Select Case FormMainWindow.lotteryscrollprogress
                     Case 1 To 10
                         PictureboxScroll.Left = PictureboxScroll.Left - (3714 - 348 * (FormMainWindow.lotteryscrollprogress - 0))
-                        If FormMainWindow.windowanimationswitch = True Then
+                        If FormMainWindow.setanimationswitch = True Then
                             MakeTransparent Me.hWnd, Int(24 * FormMainWindow.lotteryscrollprogress)
                         Else
                             MakeTransparent Me.hWnd, 240
@@ -297,7 +297,7 @@ Attribute VB_Exposed = False
                         MakeTransparent Me.hWnd, 240
                     Case 51 To 60
                         PictureboxScroll.Left = PictureboxScroll.Left - (-100 + 200 * (FormMainWindow.lotteryscrollprogress - 50))
-                        If FormMainWindow.windowanimationswitch = True Then
+                        If FormMainWindow.setanimationswitch = True Then
                             MakeTransparent Me.hWnd, Int(24 * (60 - FormMainWindow.lotteryscrollprogress))
                         Else
                             MakeTransparent Me.hWnd, 240
@@ -308,7 +308,7 @@ Attribute VB_Exposed = False
                 Select Case FormMainWindow.lotteryscrollprogress
                     Case 1 To 10
                         PictureboxScroll.Left = PictureboxScroll.Left - 1800
-                        If FormMainWindow.windowanimationswitch = True Then
+                        If FormMainWindow.setanimationswitch = True Then
                             MakeTransparent Me.hWnd, Int(24 * FormMainWindow.lotteryscrollprogress)
                         Else
                             MakeTransparent Me.hWnd, 240
@@ -318,7 +318,7 @@ Attribute VB_Exposed = False
                         MakeTransparent Me.hWnd, 240
                     Case 51 To 60
                         PictureboxScroll.Left = PictureboxScroll.Left - 1000
-                        If FormMainWindow.windowanimationswitch = True Then
+                        If FormMainWindow.setanimationswitch = True Then
                             MakeTransparent Me.hWnd, Int(24 * (60 - FormMainWindow.lotteryscrollprogress))
                         Else
                             MakeTransparent Me.hWnd, 240
@@ -341,15 +341,15 @@ Attribute VB_Exposed = False
         If FormMainWindow.lotteryscrollprogress > 20 And FormMainWindow.lotteryscrollprogress < 35 Then
             'ANTI-REPEAT
             If (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord1) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord2) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord3) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord4) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord5) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord6) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord7) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord8) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecord9) And (FormMainWindow.lotterynumber <> FormMainWindow.lotterynumberrecordX) Then
-                LabelHinttext.Caption = "OK!"
+                LabelHintText.Caption = "OK!"
             Else
-                LabelHinttext.Caption = "Duplicate item found!"
+                LabelHintText.Caption = "Duplicate item found!"
                 If FormMainWindow.lotterypreventrepeatswitch = True Then
-                    LabelHinttext.Caption = "Duplicate item found!"
+                    LabelHintText.Caption = "Duplicate item found!"
                     If FormMainWindow.lotteryscrollprogress > 31 Then
                         FormMainWindow.lotteryscrollprogress = 0
                         PictureboxScroll.Left = 20000
-                        LabelHinttext.Caption = "Retrying..."
+                        LabelHintText.Caption = "Retrying..."
                     End If
                 End If
             End If
@@ -362,7 +362,7 @@ Attribute VB_Exposed = False
         FormMainWindow.WindowsMediaPlayer1.URL = ""
         TimerLottery.Enabled = False
         LabelScrollText.Caption = "0"
-        LabelHinttext.Caption = "Cancelled!"
+        LabelHintText.Caption = "Cancelled!"
         FormMainWindow.lotteryscrollprogress = 36
         CmdCancel.Enabled = False
     End Sub
