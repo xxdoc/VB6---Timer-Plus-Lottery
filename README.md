@@ -23,11 +23,12 @@ Featuring a timer, a lottery, and a unique floating toolset.
 
 ### Licenses
 
-Open Source License: GNU GPL v3
-* Your software must be open-source if it includes codes from this software or if it is based on this software.
+* Open Source License: GNU GPL v3
+	* Your software must be open-source if it includes codes from this software or if it is based on this software.
 
-Creative Commons: CC BY-NC 4.0
-* Commercial use of this computer software is strictly prohibited. You must include the author's name "SAM TOKI STUDIO" or "Sam Toki" in your software if it includes codes from this software or if it is based on this software.
+* Creative Commons: CC BY-NC 4.0
+	* Commercial use of this computer software is strictly prohibited.
+	* You must include the author's name "SAM TOKI STUDIO" or "Sam Toki" in your software if it includes codes from this software or if it is based on this software.
 
 -----
 
@@ -39,11 +40,12 @@ Creative Commons: CC BY-NC 4.0
 
 ### 协议
 
-开源协议：GNU GPL v3
-* 若您开发的软件包含了本软件的代码，或者您开发的软件基于本软件，那么该软件必须开源。
+* 开源协议：GNU GPL v3
+	* 若您开发的软件包含了本软件的代码，或者您开发的软件基于本软件，那么该软件必须开源。
 
-知识共享协议：CC BY-NC 4.0
-* 本软件严禁用于商业盈利。若您开发的软件包含了本软件的代码，或者您开发的软件基于本软件，那么您必须在您的软件中包含本软件的作者署名「SAM TOKI STUDIO」或「Sam Toki」。
+* 知识共享协议：CC BY-NC 4.0
+	* 本软件严禁用于商业盈利。
+	* 若您开发的软件包含了本软件的代码，或者您开发的软件基于本软件，那么您必须在您的软件中包含本软件的作者署名「SAM TOKI STUDIO」或「Sam Toki」。
 
 -----
 
