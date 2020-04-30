@@ -1185,6 +1185,13 @@ Begin VB.Form FormMainWindow
       Begin VB.Menu MenuLottery1_ 
          Caption         =   "-"
       End
+      Begin VB.Menu MenuLotteryGroupSwitch 
+         Caption         =   "Group Division"
+         Shortcut        =   {F9}
+      End
+      Begin VB.Menu MenuLottery2_ 
+         Caption         =   "-"
+      End
       Begin VB.Menu MenuLotteryClearHistory 
          Caption         =   "Clear History"
          Shortcut        =   +{DEL}
@@ -1353,6 +1360,7 @@ Public lightbulbindicatorsswitch As Boolean
 Public soundswitch As Boolean
 Public timertoneswitch As Boolean
 Public lotterytoneswitch As Boolean
+Public interfacesoundswitch As Boolean
 
 'Declare Timer...
 Public timersettime As Long
@@ -1444,6 +1452,7 @@ Public answer
         soundswitch = True
         timertoneswitch = True
         lotterytoneswitch = True
+        interfacesoundswitch = True
         
         timersettime = 0
         timersettimemin = 0
@@ -1533,9 +1542,9 @@ Public answer
             FormMiniMode.LabelClockDate.Caption = clockmonth & "/" & clockday & " (" & clockweekday & ")"
         End If
 
-        If FormMainWindow.minimodeclockoclockblinkswitch = True And Minute(Time) = 0 And Second(Time) = 0 And FormMiniMode.minimodeclockoclockblinkrepeatedtimes = -1 Then
+        If minimodeclockoclockblinkswitch = True And Minute(Time) = 0 And Second(Time) = 0 And FormMiniMode.minimodeclockoclockblinkrepeatedtimes = -1 Then
             'CAUTION: TEST ONLY!!
-            'If FormMainWindow.minimodeclockoclockblinkswitch = True And Second(Time) = 0 And FormMiniMode.minimodeclockoclockblinkrepeatedtimes = -1 Then
+            'If minimodeclockoclockblinkswitch = True And Second(Time) = 0 And FormMiniMode.minimodeclockoclockblinkrepeatedtimes = -1 Then
             FormMiniMode.minimodeclockoclockblinkrepeatedtimes = 0
             FormMiniMode.minimodeclockoclockblinkopacity = 255 * (minimodewindowopacity / 100)
             FormMiniMode.minimodeclockoclockblinksetopacity = FormMiniMode.minimodeclockoclockblinkopacity
@@ -1629,6 +1638,16 @@ Public answer
                     FormMiniMode.CmdTimerStartPauseResume.Caption = "RESUME"
                 End If
         End Select
+
+        'Interface sound...
+        If (soundswitch = True And (Not (FormMainWindow.WindowState = 1)) And timerswitch = True And TimerLotteryContinuous.Enabled = False) Then
+            Select Case interfacesoundswitch
+                Case True
+                    WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Menu Command.wav"
+                Case False
+                    WindowsMediaPlayer1.URL = ""
+            End Select
+        End If
 
         'Time up...
         If timercountdowntime < 0 Then
@@ -1808,6 +1827,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
             Case False
                 timerswitch = True
         End Select
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Pop-up Blocked.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
     Public Sub CmdTimerStartPauseResume_Click()
         Call MenuTimerStartPauseResume_Click
@@ -1816,6 +1844,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         timerswitch = False
         timercountdowntime = timersettime
         Call TimerTimer_Timer
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Startup.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
     Public Sub CmdTimerReset_Click()
         Call MenuTimerReset_Click
@@ -1825,6 +1862,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         timersettime = 0
         timercountdowntime = timersettime
         Call TimerTimer_Timer
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Recycle.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
     Public Sub CmdTimerClear_Click()
         Call MenuTimerClear_Click
@@ -1880,6 +1926,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         FormMainWindow.ShapeLightLottery.FillStyle = 0
         FormMiniMode.ShapeLightLottery.BorderStyle = 1
         FormMiniMode.ShapeLightLottery.FillStyle = 0
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Proximity Connection.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
     Public Sub CmdLotteryRepeatTenTimes_Click()
         Call MenuLotteryRepeatTenTimes_Click
@@ -1896,22 +1951,36 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         lotterynumberrecord2 = -1
         lotterynumberrecord1 = -1
         Call LotteryRecordsRefresher
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Recycle.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
-    Public Sub CmdLotteryGroupSwitch_Click()
+    Public Sub MenuLotteryGroupSwitch_Click()
         Select Case lotterygroupswitch
             Case True
                 lotterygroupswitch = False
                 Call LotteryRecordsRefresher
+                MenuLotteryGroupSwitch.Checked = False
                 ShapeLightLotteryGroupSwitch.BorderStyle = 0
                 ShapeLightLotteryGroupSwitch.FillStyle = 1
                 CmdLotteryGroupSwitch.Caption = "OFF"
             Case False
                 lotterygroupswitch = True
                 Call LotteryRecordsRefresher
+                MenuLotteryGroupSwitch.Checked = True
                 ShapeLightLotteryGroupSwitch.BorderStyle = 1
                 ShapeLightLotteryGroupSwitch.FillStyle = 0
                 CmdLotteryGroupSwitch.Caption = "ON"
         End Select
+    End Sub
+    Public Sub CmdLotteryGroupSwitch_Click()
+        Call MenuLotteryGroupSwitch_Click
     End Sub
 
     Public Sub MenuExtrasMiniMode_Click()
@@ -1935,15 +2004,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
         Select Case soundswitch
             Case True
                 soundswitch = False
+                MenuExtrasSoundSwitch.Checked = False
                 ShapeLightSoundSwitch.BorderStyle = 0
                 ShapeLightSoundSwitch.FillStyle = 1
-                MenuExtrasSoundSwitch.Checked = False
                 CmdSoundSwitch.Caption = "Sound: OFF"
             Case False
                 soundswitch = True
+                MenuExtrasSoundSwitch.Checked = True
                 ShapeLightSoundSwitch.BorderStyle = 1
                 ShapeLightSoundSwitch.FillStyle = 0
-                MenuExtrasSoundSwitch.Checked = True
                 CmdSoundSwitch.Caption = "Sound: ON"
         End Select
     End Sub
@@ -1955,16 +2024,18 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
             Case True
                 bigfloatingclockswitch = False
                 FormBigFloatingClock.Hide
+                FormBigFloatingClock.bigfloatingclockautohidetimeout = 0
+                MenuExtrasBigFloatingClock.Checked = False
                 ShapeLightBigFloatingClockSwitch.BorderStyle = 0
                 ShapeLightBigFloatingClockSwitch.FillStyle = 1
-                MenuExtrasBigFloatingClock.Checked = False
                 CmdBigFloatingClockSwitch.Caption = "Big Clock: OFF"
             Case False
                 bigfloatingclockswitch = True
                 FormBigFloatingClock.Show
+                FormBigFloatingClock.bigfloatingclockautohidetimeout = 0
+                MenuExtrasBigFloatingClock.Checked = True
                 ShapeLightBigFloatingClockSwitch.BorderStyle = 1
                 ShapeLightBigFloatingClockSwitch.FillStyle = 0
-                MenuExtrasBigFloatingClock.Checked = True
                 CmdBigFloatingClockSwitch.Caption = "Big Clock: ON"
         End Select
     End Sub
@@ -1979,6 +2050,15 @@ LABEL_LotteryExecuteOnce_RANDOM_NUMBER_REGENERATE:
     End Sub
     Public Sub MenuExtrasLockCurrentUser_Click()
         Shell "cmd.exe /c rundll32 user32.dll, LockWorkStation", vbHide
+
+        'Interface sound...
+        If soundswitch = False Then Exit Sub
+        Select Case interfacesoundswitch
+            Case True
+                WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Logoff Sound.wav"
+            Case False
+                WindowsMediaPlayer1.URL = ""
+        End Select
     End Sub
     Public Sub CmdLockCurrentUser_Click()
         Call MenuExtrasLockCurrentUser_Click

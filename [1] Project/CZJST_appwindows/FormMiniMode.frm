@@ -663,7 +663,7 @@ Public windowanimationtargetheight As Integer
     Public Sub CmdRestoreWindow_Click()
         FormMainWindow.Show
         FormMainWindow.WindowState = 0
-        Me.Hide
+        FormMiniMode.Hide
     End Sub
     Public Sub CmdEXIT_Click()
         Call FormMainWindow.MenuEXIT_Click

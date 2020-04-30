@@ -132,16 +132,16 @@ Begin VB.Form FormAbout
          Top             =   4530
          Width           =   1680
       End
-      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkAnimeTwist 
-         Caption         =   "Anime Twist"
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkMajsoul 
+         Caption         =   "Majsoul"
          Height          =   345
          Left            =   3980
          TabIndex        =   38
          Top             =   4200
          Width           =   1680
       End
-      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkMajsoul 
-         Caption         =   "Majsoul"
+      Begin VB.CommandButton CmdAboutAuthorFriendlyLinkBangumi 
+         Caption         =   "Bangumi"
          Height          =   345
          Left            =   2310
          TabIndex        =   37
@@ -239,7 +239,7 @@ Begin VB.Form FormAbout
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
          TabIndex        =   28
-         Text            =   "15759438158@139.com"
+         Text            =   "SamToki@outlook.com"
          Top             =   2600
          Width           =   3105
       End
@@ -595,7 +595,7 @@ Begin VB.Form FormAbout
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
          TabIndex        =   13
-         Text            =   "Thu, Mar 26, 2020"
+         Text            =   "Thu, Apr 30, 2020"
          Top             =   2600
          Width           =   3525
       End
@@ -936,7 +936,7 @@ Public windowanimationtargetheight As Integer
     End Sub
 
     Public Sub CmdAboutAuthorEmail_Click()
-        Call ShellExecute(Me.hWnd, "open", "mailto:15759438158@139.com", "", "", SW_SHOW)
+        Call ShellExecute(Me.hWnd, "open", "mailto:SamToki@outlook.com", "", "", SW_SHOW)
     End Sub
     Public Sub CmdAboutAuthorGitHub_Click()
         Call ShellExecute(Me.hWnd, "open", "https://github.com/SamToki", "", "", SW_SHOW)
@@ -950,11 +950,11 @@ Public windowanimationtargetheight As Integer
         FormDonate1.Show
     End Sub
 
+    Public Sub CmdAboutAuthorFriendlyLinkBangumi_Click()
+        Call ShellExecute(Me.hWnd, "open", "https://bgm.tv", "", "", SW_SHOW)
+    End Sub
     Public Sub CmdAboutAuthorFriendlyLinkMajsoul_Click()
         Call ShellExecute(Me.hWnd, "open", "https://majsoul.com", "", "", SW_SHOW)
-    End Sub
-    Public Sub CmdAboutAuthorFriendlyLinkAnimeTwist_Click()
-        Call ShellExecute(Me.hWnd, "open", "https://twist.moe", "", "", SW_SHOW)
     End Sub
     Public Sub CmdAboutAuthorFriendlyLinkMoegirlWiki_Click()
         Call ShellExecute(Me.hWnd, "open", "https://zh.moegirl.org/Mainpage", "", "", SW_SHOW)

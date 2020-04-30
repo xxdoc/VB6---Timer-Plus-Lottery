@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0"; "wmp.dll"
 Begin VB.Form FormShutdownCountdown 
    Appearance      =   0  'Flat
    AutoRedraw      =   -1  'True
@@ -76,6 +77,39 @@ Begin VB.Form FormShutdownCountdown
       Interval        =   1000
       Left            =   7350
       Top             =   2415
+   End
+   Begin WMPLibCtl.WindowsMediaPlayer WindowsMediaPlayer1 
+      Height          =   420
+      Left            =   7875
+      TabIndex        =   5
+      Top             =   2415
+      Visible         =   0   'False
+      Width           =   450
+      URL             =   ""
+      rate            =   1
+      balance         =   0
+      currentPosition =   0
+      defaultFrame    =   ""
+      playCount       =   1
+      autoStart       =   -1  'True
+      currentMarker   =   0
+      invokeURLs      =   -1  'True
+      baseURL         =   ""
+      volume          =   100
+      mute            =   0   'False
+      uiMode          =   "full"
+      stretchToFit    =   0   'False
+      windowlessVideo =   0   'False
+      enabled         =   -1  'True
+      enableContextMenu=   -1  'True
+      fullScreen      =   0   'False
+      SAMIStyle       =   ""
+      SAMILang        =   ""
+      SAMIFilename    =   ""
+      captioningID    =   ""
+      enableErrorDialogs=   0   'False
+      _cx             =   794
+      _cy             =   741
    End
    Begin VB.Label LabelHinttextB 
       Appearance      =   0  'Flat
@@ -204,6 +238,16 @@ Public windowanimationtargetheight As Integer
         windowanimationtargetheight = 0
     End Sub
     Public Sub CmdOK_Click()
+        'Interface sound...
+        If FormMainWindow.soundswitch = True Then
+            Select Case FormMainWindow.interfacesoundswitch
+                Case True
+                    WindowsMediaPlayer1.URL = "C:\Windows\Media\Windows Shutdown.wav"
+                Case False
+                    WindowsMediaPlayer1.URL = ""
+            End Select
+        End If
+
         Select Case FormMainWindow.shutdowncountdowntype
             Case "Shutdown"
                 LabelHinttextA.Caption = "Shutting down..."

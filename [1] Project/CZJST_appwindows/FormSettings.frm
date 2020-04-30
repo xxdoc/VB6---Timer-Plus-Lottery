@@ -50,21 +50,32 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   1485
       Left            =   6615
-      TabIndex        =   25
+      TabIndex        =   26
       Top             =   5145
       Width           =   6105
+      Begin VB.CheckBox CheckboxSoundsInterfaceSounds 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00D0D0D0&
+         Caption         =   "Interface Sounds"
+         ForeColor       =   &H00000000&
+         Height          =   435
+         Left            =   210
+         TabIndex        =   29
+         Top             =   840
+         Value           =   1  'Checked
+         Width           =   5685
+      End
       Begin VB.CheckBox CheckboxSoundsLotteryTone 
          Appearance      =   0  'Flat
          BackColor       =   &H00D0D0D0&
          Caption         =   "Lottery tone"
          ForeColor       =   &H00000000&
          Height          =   435
-         Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   27
-         Top             =   840
+         Left            =   3150
+         TabIndex        =   28
+         Top             =   420
          Value           =   1  'Checked
-         Width           =   5685
+         Width           =   2745
       End
       Begin VB.CheckBox CheckboxSoundsTimerTone 
          Appearance      =   0  'Flat
@@ -73,11 +84,10 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   26
+         TabIndex        =   27
          Top             =   420
          Value           =   1  'Checked
-         Width           =   5685
+         Width           =   2745
       End
    End
    Begin VB.Frame FrameDisplay 
@@ -96,7 +106,7 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   1485
       Left            =   210
-      TabIndex        =   21
+      TabIndex        =   22
       Top             =   5145
       Width           =   6105
       Begin VB.CheckBox CheckboxDisplayUseOldScrollAnimationInLotteryWindow 
@@ -106,8 +116,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   24
+         TabIndex        =   25
          Top             =   840
          Width           =   5685
       End
@@ -118,8 +127,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   22
+         TabIndex        =   23
          Top             =   420
          Value           =   1  'Checked
          Width           =   2745
@@ -131,8 +139,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   3150
-         MousePointer    =   99  'Custom
-         TabIndex        =   23
+         TabIndex        =   24
          Top             =   420
          Value           =   1  'Checked
          Width           =   2745
@@ -154,7 +161,7 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   4005
       Left            =   6615
-      TabIndex        =   9
+      TabIndex        =   10
       Top             =   945
       Width           =   6105
       Begin VB.CheckBox CheckboxMiniModeAlwaysShowDate 
@@ -164,8 +171,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   18
+         TabIndex        =   19
          Top             =   2520
          Value           =   1  'Checked
          Width           =   5685
@@ -177,8 +183,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   20
+         TabIndex        =   21
          Top             =   3360
          Value           =   1  'Checked
          Width           =   5685
@@ -190,8 +195,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   3150
-         MousePointer    =   99  'Custom
-         TabIndex        =   17
+         TabIndex        =   18
          Top             =   2100
          Value           =   1  'Checked
          Width           =   2745
@@ -203,8 +207,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   16
+         TabIndex        =   17
          Top             =   2100
          Width           =   2745
       End
@@ -215,8 +218,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   15
+         TabIndex        =   16
          Top             =   1680
          Value           =   1  'Checked
          Width           =   5685
@@ -228,8 +230,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   19
+         TabIndex        =   20
          Top             =   2940
          Value           =   1  'Checked
          Width           =   5685
@@ -240,7 +241,7 @@ Begin VB.Form FormSettings
          Left            =   2520
          Max             =   100
          Min             =   20
-         TabIndex        =   12
+         TabIndex        =   13
          Top             =   480
          Value           =   80
          Width           =   3375
@@ -252,8 +253,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   13
+         TabIndex        =   14
          Top             =   840
          Value           =   1  'Checked
          Width           =   5685
@@ -265,8 +265,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   14
+         TabIndex        =   15
          Top             =   1260
          Value           =   1  'Checked
          Width           =   5685
@@ -289,7 +288,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   1680
-         TabIndex        =   11
+         TabIndex        =   12
          Top             =   450
          Width           =   705
       End
@@ -301,7 +300,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   210
-         TabIndex        =   10
+         TabIndex        =   11
          Top             =   510
          Width           =   1230
       End
@@ -322,7 +321,7 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   2325
       Left            =   210
-      TabIndex        =   4
+      TabIndex        =   5
       Top             =   2625
       Width           =   6105
       Begin VB.CheckBox CheckboxBigFloatingClock24HrFormat 
@@ -332,8 +331,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   8
+         TabIndex        =   9
          Top             =   1680
          Value           =   1  'Checked
          Width           =   5685
@@ -345,8 +343,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   7
+         TabIndex        =   8
          Top             =   1260
          Value           =   1  'Checked
          Width           =   5685
@@ -358,8 +355,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   5
+         TabIndex        =   6
          Top             =   420
          Value           =   1  'Checked
          Width           =   5685
@@ -371,8 +367,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   6
+         TabIndex        =   7
          Top             =   840
          Value           =   1  'Checked
          Width           =   5685
@@ -393,7 +388,7 @@ Begin VB.Form FormSettings
       EndProperty
       Height          =   645
       Left            =   11235
-      TabIndex        =   0
+      TabIndex        =   1
       Top             =   210
       Width           =   1485
    End
@@ -413,7 +408,7 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   1485
       Left            =   210
-      TabIndex        =   1
+      TabIndex        =   2
       Top             =   945
       Width           =   6105
       Begin VB.CheckBox CheckboxLotteryDarkTheme 
@@ -423,8 +418,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   3
+         TabIndex        =   4
          Top             =   840
          Width           =   5685
       End
@@ -435,8 +429,7 @@ Begin VB.Form FormSettings
          ForeColor       =   &H00000000&
          Height          =   435
          Left            =   210
-         MousePointer    =   99  'Custom
-         TabIndex        =   2
+         TabIndex        =   3
          Top             =   420
          Value           =   1  'Checked
          Width           =   5685
@@ -459,7 +452,7 @@ Begin VB.Form FormSettings
       ForeColor       =   &H00000000&
       Height          =   645
       Left            =   315
-      TabIndex        =   28
+      TabIndex        =   0
       Top             =   210
       Width           =   10515
    End
@@ -755,6 +748,16 @@ Public windowanimationtargetheight As Integer
             Case False
                 FormMainWindow.lotterytoneswitch = True
                 CheckboxSoundsLotteryTone.Value = 1
+        End Select
+    End Sub
+    Public Sub CheckboxSoundsInterfaceSounds_Click()
+        Select Case FormMainWindow.interfacesoundswitch
+            Case True
+                FormMainWindow.interfacesoundswitch = False
+                CheckboxSoundsInterfaceSounds.Value = 0
+            Case False
+                FormMainWindow.interfacesoundswitch = True
+                CheckboxSoundsInterfaceSounds.Value = 1
         End Select
     End Sub
 
