@@ -1297,9 +1297,9 @@ Attribute VB_Exposed = False
 '
 '  Timer+Lottery
 '
-'  Powered by Sam Toki. MADE IN CHINA.
+'  Powered by Sam Toki
 '  Version: v8.02 Release Version ENG
-'  Date:    2020/03/26 (Thu.)
+'  Date:    2020/04/30 (Thu.)
 '  History: First version v0.10 Beta was built on 2017/03/24.
 '
 '  WARNING: Commercial use of this computer software is strictly prohibited.
