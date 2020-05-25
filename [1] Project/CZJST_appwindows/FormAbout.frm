@@ -69,7 +69,7 @@ Begin VB.Form FormAbout
       ForeColor       =   &H00000000&
       Height          =   1170
       Left            =   210
-      TabIndex        =   41
+      TabIndex        =   33
       Top             =   6300
       Width           =   12510
       Begin VB.Label LabelCopyright2 
@@ -80,7 +80,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   43
+         TabIndex        =   35
          Top             =   735
          Width           =   11880
       End
@@ -92,7 +92,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   42
+         TabIndex        =   34
          Top             =   420
          Width           =   11880
       End
@@ -120,7 +120,7 @@ Begin VB.Form FormAbout
          Caption         =   "Mikan Project"
          Height          =   345
          Left            =   3980
-         TabIndex        =   40
+         TabIndex        =   32
          Top             =   4530
          Width           =   1680
       End
@@ -128,7 +128,7 @@ Begin VB.Form FormAbout
          Caption         =   "Moegirl Wiki"
          Height          =   345
          Left            =   2310
-         TabIndex        =   39
+         TabIndex        =   31
          Top             =   4530
          Width           =   1680
       End
@@ -136,7 +136,7 @@ Begin VB.Form FormAbout
          Caption         =   "Majsoul"
          Height          =   345
          Left            =   3980
-         TabIndex        =   38
+         TabIndex        =   30
          Top             =   4200
          Width           =   1680
       End
@@ -144,26 +144,9 @@ Begin VB.Form FormAbout
          Caption         =   "Bangumi"
          Height          =   345
          Left            =   2310
-         TabIndex        =   37
+         TabIndex        =   29
          Top             =   4200
          Width           =   1680
-      End
-      Begin VB.CommandButton CmdAboutAuthorDonate1 
-         Caption         =   ">"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   420
-         Left            =   5330
-         TabIndex        =   35
-         Top             =   3600
-         Width           =   420
       End
       Begin VB.CommandButton CmdAboutAuthorGitHub 
          Caption         =   ">"
@@ -178,25 +161,8 @@ Begin VB.Form FormAbout
          EndProperty
          Height          =   420
          Left            =   5330
-         TabIndex        =   32
-         Top             =   3100
-         Width           =   420
-      End
-      Begin VB.CommandButton CmdAboutAuthorEmail 
-         Caption         =   ">"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   13.5
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   420
-         Left            =   5330
-         TabIndex        =   29
-         Top             =   2600
+         TabIndex        =   27
+         Top             =   1530
          Width           =   420
       End
       Begin VB.TextBox TextboxAboutAuthorGitHub 
@@ -216,47 +182,10 @@ Begin VB.Form FormAbout
          Left            =   2205
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
-         TabIndex        =   31
-         Text            =   "https://github.com/SamToki"
-         Top             =   3100
-         Width           =   3105
-      End
-      Begin VB.TextBox TextboxAboutAuthorEmail 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   420
-         Left            =   2205
-         Locked          =   -1  'True
-         MousePointer    =   3  'I-Beam
-         TabIndex        =   28
-         Text            =   "SamToki@outlook.com"
-         Top             =   2600
-         Width           =   3105
-      End
-      Begin VB.TextBox TextboxAboutAuthorStatus 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         ForeColor       =   &H00000000&
-         Height          =   840
-         Left            =   2205
-         Locked          =   -1  'True
-         MousePointer    =   3  'I-Beam
-         MultiLine       =   -1  'True
-         ScrollBars      =   2  'Vertical
          TabIndex        =   26
-         Text            =   "FormAbout.frx":0E04
+         Text            =   "https://github.com/SamToki"
          Top             =   1530
-         Width           =   3525
+         Width           =   3105
       End
       Begin VB.TextBox TextboxAboutAuthorOrganization 
          Appearance      =   0  'Flat
@@ -276,7 +205,7 @@ Begin VB.Form FormAbout
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
          TabIndex        =   24
-         Text            =   "SAM TOKI STUDIO of CZJST Inc."
+         Text            =   "SAM TOKI STUDIO"
          Top             =   1000
          Width           =   3525
       End
@@ -319,7 +248,7 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   36
+         TabIndex        =   28
          Top             =   4200
          Width           =   1725
       End
@@ -327,73 +256,10 @@ Begin VB.Form FormAbout
          Appearance      =   0  'Flat
          Height          =   420
          Left            =   5310
-         Picture         =   "FormAbout.frx":0E6C
+         Picture         =   "FormAbout.frx":0E04
          Stretch         =   -1  'True
          Top             =   480
          Width           =   420
-      End
-      Begin VB.Label LabelAboutAuthorDonate1 
-         Appearance      =   0  'Flat
-         BackColor       =   &H000000FF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Sponsor via Alipay..."
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   375
-         Left            =   2205
-         TabIndex        =   34
-         Top             =   3675
-         Width           =   3090
-      End
-      Begin VB.Label LabelAboutAuthorDonate 
-         Appearance      =   0  'Flat
-         BackColor       =   &H000000FF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Donate:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   375
-         Left            =   315
-         TabIndex        =   33
-         Top             =   3675
-         Width           =   1725
-      End
-      Begin VB.Label LabelAboutAuhtorStatus 
-         Appearance      =   0  'Flat
-         BackColor       =   &H000000FF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Status:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   375
-         Left            =   315
-         TabIndex        =   25
-         Top             =   1575
-         Width           =   1725
       End
       Begin VB.Label LabelAboutAuthorGitHub 
          Appearance      =   0  'Flat
@@ -412,29 +278,8 @@ Begin VB.Form FormAbout
          ForeColor       =   &H00000000&
          Height          =   375
          Left            =   315
-         TabIndex        =   30
-         Top             =   3150
-         Width           =   1725
-      End
-      Begin VB.Label LabelAboutAuthorEmail 
-         Appearance      =   0  'Flat
-         BackColor       =   &H000000FF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "E-mail:"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   375
-         Left            =   315
-         TabIndex        =   27
-         Top             =   2625
+         TabIndex        =   25
+         Top             =   1575
          Width           =   1725
       End
       Begin VB.Label LabelAboutAuthorOrganization 
@@ -551,7 +396,7 @@ Begin VB.Form FormAbout
          Locked          =   -1  'True
          MousePointer    =   3  'I-Beam
          TabIndex        =   18
-         Text            =   "GNU GPL v3; CC BY-NC 4.0"
+         Text            =   "GNU GPL v3; CC BY-NC 3.0"
          Top             =   4480
          Width           =   3105
       End
@@ -691,7 +536,7 @@ Begin VB.Form FormAbout
          Appearance      =   0  'Flat
          Height          =   480
          Left            =   5380
-         Picture         =   "FormAbout.frx":1E8EA
+         Picture         =   "FormAbout.frx":1E882
          Top             =   420
          Width           =   480
       End
@@ -935,19 +780,8 @@ Public windowanimationtargetheight As Integer
         Call ShellExecute(Me.hWnd, "open", "https://creativecommons.org/use-remix/cc-licenses/", "", "", SW_SHOW)
     End Sub
 
-    Public Sub CmdAboutAuthorEmail_Click()
-        Call ShellExecute(Me.hWnd, "open", "mailto:SamToki@outlook.com", "", "", SW_SHOW)
-    End Sub
     Public Sub CmdAboutAuthorGitHub_Click()
         Call ShellExecute(Me.hWnd, "open", "https://github.com/SamToki", "", "", SW_SHOW)
-    End Sub
-    Public Sub CmdAboutAuthorDonate1_Click()
-        FormDonate1.Move (Screen.Width / 2), (Screen.Height / 2), 0, 0
-        FormDonate1.windowanimationtargetleft = (Screen.Width / 2) - (12930 / 2)
-        FormDonate1.windowanimationtargettop = (Screen.Height / 2) - (7785 / 2)
-        FormDonate1.windowanimationtargetwidth = 12930
-        FormDonate1.windowanimationtargetheight = 7785
-        FormDonate1.Show
     End Sub
 
     Public Sub CmdAboutAuthorFriendlyLinkBangumi_Click()

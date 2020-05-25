@@ -1304,7 +1304,7 @@ Attribute VB_Exposed = False
 '
 '  WARNING: Commercial use of this computer software is strictly prohibited.
 '           Open source license:      GNU GPL v3
-'           Creative Commons license: CC BY-NC 4.0
+'           Creative Commons license: CC BY-NC 3.0
 '
 '  Copyright: TM & (C) 2015-2020 SAM TOKI STUDIO. All rights reserved.
 '             SAM TOKI STUDIO is a trademark of CZJ Software Technologies (CZJST) Inc. in the P.R.C and other countries.

@@ -11,7 +11,6 @@ Form=CZJST_appwindows\FormTimeUp.frm
 Form=CZJST_appwindows\FormInputNumber.frm
 Object={6BF52A50-394A-11D3-B153-00C04F79FAA6}#1.0#0; wmp.dll
 Form=CZJST_appwindows\FormLottery.frm
-Form=CZJST_appwindows\FormDonate1.frm
 Form=CZJST_appwindows\FormSettings.frm
 Form=CZJST_appwindows\FormAbout.frm
 IconForm="FormMainWindow"
