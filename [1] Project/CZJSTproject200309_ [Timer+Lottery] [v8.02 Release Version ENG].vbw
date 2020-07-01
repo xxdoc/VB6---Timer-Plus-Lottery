@@ -1,0 +1,9 @@
+FormMainWindow = 764, 0, 1528, 477, C, 575, 241, 1186, 765, C
+FormMiniMode = 105, 69, 672, 590, C, 850, 614, 1279, 814, C
+FormBigFloatingClock = 88, 56, 655, 577, C, 118, 72, 685, 593, C
+FormShutdownCountdown = 764, 0, 1528, 955, C, 67, 80, 1017, 399, C
+FormTimeUp = 764, 0, 1528, 955, C, 416, 358, 1359, 685, C
+FormInputNumber = 764, 0, 1528, 955, C, 176, 112, 743, 633, C
+FormLottery = 764, 0, 1528, 955, C, 40, 28, 1128, 675, C
+FormSettings = 0, 0, 764, 955, C, 519, 253, 1283, 731, C
+FormAbout = 306, 366, 1394, 1013, C, 120, 84, 1208, 731, C
